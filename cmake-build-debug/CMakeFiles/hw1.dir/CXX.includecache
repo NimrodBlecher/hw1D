@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/AVLnode.h
+
+C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/main.cpp
+iostream
+-
+AVLnode.h
+C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/AVLnode.h
+
