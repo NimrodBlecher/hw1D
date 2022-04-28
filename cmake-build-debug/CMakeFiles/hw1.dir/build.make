@@ -78,19 +78,94 @@ CMakeFiles/hw1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1.dir/main.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\main.cpp" -o CMakeFiles\hw1.dir\main.cpp.s
 
+CMakeFiles/hw1.dir/Worker.cpp.obj: CMakeFiles/hw1.dir/flags.make
+CMakeFiles/hw1.dir/Worker.cpp.obj: ../Worker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/hw1.dir/Worker.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1.dir\Worker.cpp.obj -c "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\Worker.cpp"
+
+CMakeFiles/hw1.dir/Worker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw1.dir/Worker.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\Worker.cpp" > CMakeFiles\hw1.dir\Worker.cpp.i
+
+CMakeFiles/hw1.dir/Worker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1.dir/Worker.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\Worker.cpp" -o CMakeFiles\hw1.dir\Worker.cpp.s
+
+CMakeFiles/hw1.dir/helpers.cpp.obj: CMakeFiles/hw1.dir/flags.make
+CMakeFiles/hw1.dir/helpers.cpp.obj: ../helpers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/hw1.dir/helpers.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1.dir\helpers.cpp.obj -c "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\helpers.cpp"
+
+CMakeFiles/hw1.dir/helpers.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw1.dir/helpers.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\helpers.cpp" > CMakeFiles\hw1.dir\helpers.cpp.i
+
+CMakeFiles/hw1.dir/helpers.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1.dir/helpers.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\helpers.cpp" -o CMakeFiles\hw1.dir\helpers.cpp.s
+
+CMakeFiles/hw1.dir/Employee.cpp.obj: CMakeFiles/hw1.dir/flags.make
+CMakeFiles/hw1.dir/Employee.cpp.obj: ../Employee.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/hw1.dir/Employee.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1.dir\Employee.cpp.obj -c "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\Employee.cpp"
+
+CMakeFiles/hw1.dir/Employee.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw1.dir/Employee.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\Employee.cpp" > CMakeFiles\hw1.dir\Employee.cpp.i
+
+CMakeFiles/hw1.dir/Employee.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1.dir/Employee.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\Employee.cpp" -o CMakeFiles\hw1.dir\Employee.cpp.s
+
+CMakeFiles/hw1.dir/Comapny.cpp.obj: CMakeFiles/hw1.dir/flags.make
+CMakeFiles/hw1.dir/Comapny.cpp.obj: ../Comapny.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/hw1.dir/Comapny.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1.dir\Comapny.cpp.obj -c "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\Comapny.cpp"
+
+CMakeFiles/hw1.dir/Comapny.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw1.dir/Comapny.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\Comapny.cpp" > CMakeFiles\hw1.dir\Comapny.cpp.i
+
+CMakeFiles/hw1.dir/Comapny.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1.dir/Comapny.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\Comapny.cpp" -o CMakeFiles\hw1.dir\Comapny.cpp.s
+
+CMakeFiles/hw1.dir/Market.cpp.obj: CMakeFiles/hw1.dir/flags.make
+CMakeFiles/hw1.dir/Market.cpp.obj: ../Market.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/hw1.dir/Market.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1.dir\Market.cpp.obj -c "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\Market.cpp"
+
+CMakeFiles/hw1.dir/Market.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw1.dir/Market.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\Market.cpp" > CMakeFiles\hw1.dir\Market.cpp.i
+
+CMakeFiles/hw1.dir/Market.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1.dir/Market.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\Market.cpp" -o CMakeFiles\hw1.dir\Market.cpp.s
+
 # Object files for target hw1
 hw1_OBJECTS = \
-"CMakeFiles/hw1.dir/main.cpp.obj"
+"CMakeFiles/hw1.dir/main.cpp.obj" \
+"CMakeFiles/hw1.dir/Worker.cpp.obj" \
+"CMakeFiles/hw1.dir/helpers.cpp.obj" \
+"CMakeFiles/hw1.dir/Employee.cpp.obj" \
+"CMakeFiles/hw1.dir/Comapny.cpp.obj" \
+"CMakeFiles/hw1.dir/Market.cpp.obj"
 
 # External object files for target hw1
 hw1_EXTERNAL_OBJECTS =
 
 hw1.exe: CMakeFiles/hw1.dir/main.cpp.obj
+hw1.exe: CMakeFiles/hw1.dir/Worker.cpp.obj
+hw1.exe: CMakeFiles/hw1.dir/helpers.cpp.obj
+hw1.exe: CMakeFiles/hw1.dir/Employee.cpp.obj
+hw1.exe: CMakeFiles/hw1.dir/Comapny.cpp.obj
+hw1.exe: CMakeFiles/hw1.dir/Market.cpp.obj
 hw1.exe: CMakeFiles/hw1.dir/build.make
 hw1.exe: CMakeFiles/hw1.dir/linklibs.rsp
 hw1.exe: CMakeFiles/hw1.dir/objects1.rsp
 hw1.exe: CMakeFiles/hw1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable hw1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable hw1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\hw1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
