@@ -7,7 +7,7 @@
 using std::cout;
 using std::endl;
 using namespace hw1;
-//hello
+//hello you
 int main() {
 
     Worker worker21(21, 2, 100, 2);
