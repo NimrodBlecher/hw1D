@@ -4,6 +4,8 @@
 #include "AVLnode.h"
 #include "Worker.h"
 #include "Company.h"
+using namespace  hw1;
+
 class Employee{
     int id;
     int salary;

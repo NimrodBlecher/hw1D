@@ -4,6 +4,9 @@
 #include "Company.h"
 #include "Employee.h"
 #include "AVLnode.h"
+
+using namespace  hw1;
+
 class Market {
     AVLnode<Company,int>* companies_tree;
     AVLnode<Company,int>* companies_tree_with_workers;
