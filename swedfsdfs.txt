@@ -1,0 +1,96 @@
+
+
+//template <class Data, class Key>
+//AVLnode<Data,Key>* AVLnode<Data,Key> :: createSemiFullTree(int to_delete)
+//{
+//    for ( int i = 0; i < to_delete; i++)
+//    {
+//        AVLnode<Data,Key>* leaf = this -> findNextLeaf();
+//        if (leaf -> parent -> right == leaf)
+//        {
+//            leaf -> parent -> right = nullptr;
+//            delete leaf;
+//        }
+//        else {
+//            leaf -> parent -> left= nullptr;
+//            delete leaf;
+//        }
+//    }
+//    return this;
+////    cout<< to_delete<< endl;
+////    AVLnode<Data,Key>* current_parent = root;
+////    if (to_delete==0)
+////    {
+////        return this;
+////    }
+////    if(to_delete == 1)
+////    {
+////        while(current_parent->right != nullptr)
+////        {
+////            current_parent = current_parent->right;
+////        }
+////        if(current_parent->getHeight()==0)
+////        {
+////            current_parent=current_parent->parent;
+////            delete current_parent->right;
+////            current_parent->right = nullptr;
+////        }
+////
+////        return this;
+////    }
+////    if(to_delete == 2)
+////    {
+////        while(current_parent->right != nullptr)
+////        {
+////            current_parent = current_parent->right;
+////        }
+////        current_parent=current_parent->parent;
+////        delete current_parent->right;
+////        current_parent->right = nullptr;
+////        delete current_parent->left;
+////        current_parent->left = nullptr;
+////        return this;
+//    }
+//    //erased one or two sons according to- to_delete and if its now 0 i want to return the root
+//    while(current_parent->parent != nullptr) //back at root
+//    {
+//        if(to_delete ==0)
+//        {
+//            cout<< " i know in the while to delete is :" << to_delete << endl;
+//            break;
+//        }
+//        cout <<"final to delete" << to_delete << endl;
+//        current_parent= current_parent->parent;
+//        if(current_parent -> parent == nullptr)
+//        {
+//            break;
+//        }
+//        current_parent ->left = current_parent->left-> createSemiFullTree(to_delete,current_parent->left);
+//    }
+//    return this;
+//}
+//template <class Data, class Key>
+//AVLnode<Data,Key>* AVLnode<Data,Key> :: findNextLeaf()
+//{
+//    if (this->getHeight() == 0)
+//    {
+//        return this;
+//    }
+//    if (this -> getHeight() != 0 && this -> getLeft() == nullptr && this -> getRight() == nullptr)
+//    {
+//        return nullptr;
+//    }
+//    if(this->right == nullptr)
+//    {
+//        return this->left->findNextLeaf();
+//    }
+//    else
+//    {
+//        AVLnode<Data,Key>* bla = this->right->findNextLeaf();
+//        if (this->right->findNextLeaf() == nullptr)
+//        {
+//            return this->left->findNextLeaf();
+//        }
+//        return bla;
+//    }
+//}

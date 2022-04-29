@@ -1,6 +1,8 @@
 #ifndef AVLNODE_H_WORKER_H
 #define AVLNODE_H_WORKER_H
 #include "AVLnode.h"
+using namespace hw1;
+
 class Worker {
     int id;
     int my_company_id;
