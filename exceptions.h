@@ -12,6 +12,10 @@ namespace hw1 {
     class CompanyHasNoWorkers : public Exception {
     };
 
+    class CompanyValueNotSufficient : public Exception {
+    };
+
+
 }
 
 

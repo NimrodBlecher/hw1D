@@ -109,6 +109,7 @@ namespace hw1 {
     template<class Data, class Key>
     void AVLnode<Data, Key>::deleteTree() {
         if (this->left == nullptr && this->right == nullptr) {
+            delete this;
             return;
         }
         if (this->left != nullptr) {

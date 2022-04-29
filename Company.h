@@ -15,7 +15,7 @@ class Company {
 public:
     Company() = default;
     Company(int company_id,int value);
-    ~Company() = default;
+    ~Company();
     void hireWorker(AVLnode<Worker,int>* worker);
     int getId();
     void getHighestEarner(int* earner_id);
@@ -28,7 +28,8 @@ public:
     void setNewWorkersTreeBySalary(AVLnode<AVLnode<Worker,int>*,int>* new_workers_tree_by_salary);
     AVLnode <AVLnode<Worker,int>*,int>* getWorkersTreeById();
     AVLnode <AVLnode<Worker,int>*,int>* getWorkersTreeBySalary();
-
+    void buyCompany(Company* company_to_buy, double factor);
+    void destroyCompany();
 
 
 

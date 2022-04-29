@@ -7,7 +7,7 @@
 using std::cout;
 using std::endl;
 using namespace hw1;
-//hello you
+
 int main() {
 
     Worker worker21(21, 2, 100, 2);
@@ -33,7 +33,7 @@ int main() {
 
 
     Company google(1,100);
-    Company microsoft(2,100);
+    Company microsoft(2,1000);
 
 
     google.hireWorker(worker13_node);
@@ -56,29 +56,42 @@ int main() {
     cout << endl << endl << endl;
 
 
-    AVLnode<AVLnode<Worker,int>*,int>* new_microsoft_workers = mergeTrees(google.getWorkersTreeById(),microsoft.getWorkersTreeById()) ;
-    microsoft.setNewWorkersTreeById(new_microsoft_workers);
+    //AVLnode<AVLnode<Worker,int>*,int>* new_microsoft_workers = mergeTrees(google.getWorkersTreeById(),microsoft.getWorkersTreeById()) ;
+    //microsoft.setNewWorkersTreeById(new_microsoft_workers);
+
+    //microsoft.buyCompany(&google,6);
 
     cout << "Microsoft bought Google:  ";
     print2D(microsoft.getWorkersTreeById());
     cout << endl << endl << endl;
 
-    google.removeWorker(25,100000);
-    int big_fucker =555555;
-    microsoft.getHighestEarner(&big_fucker);
-    cout << "highest earner id is: " << big_fucker;
+//        google.removeWorker(22,100);
+//      google.removeWorker(14,300);
+//        google.removeWorker(24,10);
+//        google.removeWorker(21,100);
+//        google.removeWorker(15,100);
+//    google.removeWorker(15,300);
+
+
+    delete worker21_node;
+    delete worker22_node;
+    delete worker23_node;
+    delete worker24_node;
+    delete worker25_node;
+    delete worker13_node;
+    delete worker14_node;
+    delete worker15_node;
+    delete worker16_node;
+
+
+
 //    print2D(google.getWorkersTreeById());
 //    cout << endl << endl << endl << endl;
 //    print2D(google.getWorkersTreeBySalary());
 //    cout << endl << endl << endl << endl;
 //    cout << "height is:  "  << google.getWorkersTreeById()->getHeight() << endl;
 //
-//    google.removeWorker(22,100);
-//    google.removeWorker(14,300);
-//    google.removeWorker(24,10);
-//    google.removeWorker(21,100);
-//    google.removeWorker(15,100);
-//    google.removeWorker(15,300);
+
 ////
 //    cout << "after firing" << endl;
 ////
@@ -95,6 +108,8 @@ int main() {
 //
 //   cout << "height is:  "  <<google.getWorkersTreeById()->getHeight() << endl;
 //
+
+
 
 
 
