@@ -10,13 +10,17 @@ using namespace  hw1;
 class Market {
     AVLnode<Company*,int>* companies_tree;
     AVLnode<Company*,int>* companies_tree_with_workers;
-    AVLnode<Worker*,int>* workers_tree_by_id;
-    AVLnode<Worker*,int>* workers_tree_by_salary;
+    AVLnode<Worker*,int>* market_workers_tree_by_id;
+    AVLnode<Worker*,int>* market_workers_tree_by_salary;
+    int num_of_workers;
+    int num_of_companies;
+    int num_of_comapny_with_workers;
 
 public:
-    Market() = default;
+    Market();
     ~Market() = default;
-    void AddCompany(int company_id, int value);
+    void addCompany(int company_id, int value);
+    void addWorker(int company_id, int employee_id,int grade, int salary);
 
 };
 

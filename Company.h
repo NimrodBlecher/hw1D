@@ -16,11 +16,12 @@ public:
     Company() = default;
     Company(int company_id,int value);
     ~Company() =default;
-    void hireWorker(AVLnode<Worker*,int>* worker);
+    void hireWorker(AVLnode<Worker*,int>* worker_by_id,AVLnode<Worker*,int>* worker_by_salary);
     int getId() const;
     void getHighestEarner(int* earner_id) const;
     void removeWorker(int remove_id,int salary);
     int  getValue() const;
+    void  setValue(int new_value);
     void setHighestEarner();
     void setNumOfWorkers(int addition);
     void setNewWorkersTreeById(AVLnode<AVLnode<Worker*,int>*,int>* new_workers_tree_by_id);
