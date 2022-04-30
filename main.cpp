@@ -9,88 +9,7 @@ using std::endl;
 using namespace hw1;
 
 int main() {
-
-    Market hitech;
-
-    hitech.addCompany(1,100);
-    hitech.addCompany(2,1200);
-
-    hitech.addWorker(2,20,5,500);
-    hitech.addWorker(2,30,5,600);
-
-    hitech.addWorker(1,15,7,12);
-//    hitech.addWorker(1,55,8,122);
-//    hitech.addWorker(1,21,9,1222);
-
-    AVLnode<Company*,int>* companies = hitech.getCompaniesTree();
-    print2D(companies);
-
-    AVLnode<Worker*,int>* workers = hitech.getWorkersTreeById();
-    print2D(workers);
-
-
-
-
-
-
-
-
-
-
-
-
-
-    return 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
 //    Worker* worker21 = new Worker(21, 2, 100, 2);
 //    Worker* worker22 = new Worker(22, 2, 100, 2);
 //    Worker* worker23 = new Worker(23, 2, 100, 2);
@@ -115,8 +34,6 @@ int main() {
 //
 //    Company*  google = new Company(1,100);
 //    Company* microsoft = new Company(2,1000);
-//
-//
 //
 //
 //    google->hireWorker(worker13_node);
@@ -258,3 +175,16 @@ int main() {
 ////    print2D(root);
 //    cout<<"bulbul gadolll";
 
+Market highTech;
+highTech.addCompany(1,100);
+highTech.addCompany(2,1200);
+highTech.addWorker(2,20,5,500);
+highTech.addWorker(2,30,5,600);
+
+highTech.addWorker(1,15,5,700);
+AVLnode<Company*,int>* companies = highTech.getCompaniesTree();
+print2D(companies);
+
+
+ return 0;
+}

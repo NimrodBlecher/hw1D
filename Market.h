@@ -24,8 +24,9 @@ public:
     AVLnode<Worker*,int>* getWorkersTreeById();
     AVLnode<Worker*,int>* getWorkersTreeBySalary();
     AVLnode<Company*,int>* getCompaniesTree();
-    Company* getCompany(int company_id);
-    int getNumOfCompanies();
+    Company* getCompany(int id);
+
+
 
 };
 

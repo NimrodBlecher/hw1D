@@ -521,7 +521,8 @@ namespace hw1 {
                 insert_node = insert_node->right;
                 continue;
             } else {
-                cout<<"wtf";
+                int y = new_node -> getKey1();
+                cout<<"wtf" << y << endl;
                 our_delete(new_node,WITHOUT_DATA);
                 return this;
             }
