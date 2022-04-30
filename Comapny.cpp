@@ -7,8 +7,8 @@ Company :: Company(int company_id,int value) : id(company_id), value(value),num_
 
 Company :: ~Company()
 {
-        deleteTree(workers_tree_by_id,WITHOUT_DATA);
-        deleteTree(workers_tree_by_salary,WITHOUT_DATA);
+        deleteTree(workers_tree_by_id,WITH_DATA);
+        deleteTree(workers_tree_by_salary,WITH_DATA);
 }
 
 int Company :: getId() const {
@@ -101,16 +101,17 @@ void Company ::buyCompany(Company* company_to_buy, double factor)
     {
         throw CompanyValueNotSufficient();
     }
-    cout<<"hereeeeeeeeeeeeeee";
-    setNewWorkersTreeById(mergeTrees(this->workers_tree_by_id,
-                                     company_to_buy->getWorkersTreeById(),WITHOUT_DATA));
+    setNewWorkersTreeById(mergeTrees(this->workers_tree_by_id, company_to_buy->getWorkersTreeById(),WITHOUT_DATA));
     setNewWorkersTreeBySalary(mergeTrees(this->workers_tree_by_salary,
                                          company_to_buy->getWorkersTreeBySalary(),WITHOUT_DATA));
-    this->value = floor((this->value + company_to_buy->getValue())*factor);
+    //company_to_buy ->setNewWorkersTreeById(nullptr);
+    // company_to_buy ->setNewWorkersTreeBySalary(nullptr);
+    this -> value = floor((this->value + company_to_buy->getValue())*factor);
+    setNumOfWorkers(company_to_buy->num_of_workers);
+    company_to_buy -> setNumOfWorkers(-(company_to_buy-> num_of_workers));
+
 
 }
-
-
 
 
 //void Company ::destroyCompany()
