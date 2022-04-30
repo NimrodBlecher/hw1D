@@ -15,6 +15,9 @@ namespace hw1 {
     class CompanyValueNotSufficient : public Exception {
     };
 
+    class CompanyAlreadyExists : public Exception {
+    };
+
 
 }
 

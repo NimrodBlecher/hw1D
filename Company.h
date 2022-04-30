@@ -10,26 +10,25 @@ class Company {
     int num_of_workers;
     int value;
     int highest_earner_id;
-    AVLnode<AVLnode<Worker,int>*,int>* workers_tree_by_id;
-    AVLnode<AVLnode<Worker,int>*,int>* workers_tree_by_salary;
+    AVLnode<AVLnode<Worker*,int>*,int>* workers_tree_by_id;
+    AVLnode<AVLnode<Worker*,int>*,int>* workers_tree_by_salary;
 public:
     Company() = default;
     Company(int company_id,int value);
     ~Company();
-    void hireWorker(AVLnode<Worker,int>* worker);
-    int getId();
-    void getHighestEarner(int* earner_id);
+    void hireWorker(AVLnode<Worker*,int>* worker);
+    int getId() const;
+    void getHighestEarner(int* earner_id) const;
     void removeWorker(int remove_id,int salary);
-    void setValue(int addition);
-    int  getValue();
+    int  getValue() const;
     void setHighestEarner();
     void setNumOfWorkers(int addition);
-    void setNewWorkersTreeById(AVLnode<AVLnode<Worker,int>*,int>* new_workers_tree_by_id);
-    void setNewWorkersTreeBySalary(AVLnode<AVLnode<Worker,int>*,int>* new_workers_tree_by_salary);
-    AVLnode <AVLnode<Worker,int>*,int>* getWorkersTreeById();
-    AVLnode <AVLnode<Worker,int>*,int>* getWorkersTreeBySalary();
+    void setNewWorkersTreeById(AVLnode<AVLnode<Worker*,int>*,int>* new_workers_tree_by_id);
+    void setNewWorkersTreeBySalary(AVLnode<AVLnode<Worker*,int>*,int>* new_workers_tree_by_salary);
+    AVLnode <AVLnode<Worker*,int>*,int>* getWorkersTreeById();
+    AVLnode <AVLnode<Worker*,int>*,int>* getWorkersTreeBySalary();
     void buyCompany(Company* company_to_buy, double factor);
-    void destroyCompany();
+
 
 
 

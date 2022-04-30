@@ -1,0 +1,65 @@
+ template<class Data, class Key>
+    AVLnode<Data,Key> *AVLnode<Data, Key> :: deleteNode(Key A, Key B) {
+        AVLnode<Data, Key> *find_node = this->find(A, B);
+        if (find_node == nullptr) {
+            return this;
+        }
+        AVLnode<Data, Key> *find_node_dad = find_node->parent;
+        AVLnode<Data, Key> *replace_node = findMax(find_node->left);
+        if (replace_node == nullptr) {
+            if (find_node->right == nullptr) {
+                if (find_node_dad == nullptr) {
+                    delete find_node;
+                   // cout << "deleting root" << "data is : " << find_node->getKey1() << endl;
+                    return nullptr;
+                }
+                if ((*find_node) < (*find_node_dad)) {
+                    find_node_dad->left = nullptr;
+                } else {
+                    find_node_dad->right = nullptr;
+                }
+                delete find_node;
+                return find_node_dad->fixToRoot();
+            } else {
+                if (find_node_dad == nullptr) {
+                    find_node->key1 = find_node->right->key1;
+                    find_node->key2 = find_node->right->key2;
+                    find_node->data = find_node->right->data;
+                    delete find_node->right;
+                    find_node->right = nullptr;
+                    return find_node;
+                }
+                if (*find_node < *find_node_dad) {
+                    find_node_dad->left = find_node->right;
+                    find_node->right->parent = find_node_dad;
+                } else {
+
+                    find_node_dad->right = find_node->right;
+                    find_node->right->parent = find_node_dad;
+                }
+                delete find_node;
+                return find_node_dad->right->fixToRoot();
+            }
+
+        }
+        AVLnode<Data, Key> *replace_parent = replace_node->parent;
+        find_node->data = replace_node->data;
+        find_node->key1 = replace_node->key1;
+        find_node->key2 = replace_node->key2;
+        if (*(replace_node->parent) == *find_node) {
+            find_node->left = replace_node->left;
+            replace_node->parent = find_node;
+            delete replace_node;
+            return replace_parent->fixToRoot();
+        }
+        if (replace_node -> left != nullptr)
+        {
+            replace_parent->right = replace_node -> left;
+        }
+        else
+        {
+            replace_parent -> right = nullptr;
+        }
+        delete replace_node;
+        return replace_parent->fixToRoot();
+    }

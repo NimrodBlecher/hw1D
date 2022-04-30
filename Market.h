@@ -8,16 +8,16 @@
 using namespace  hw1;
 
 class Market {
-    AVLnode<Company,int>* companies_tree;
-    AVLnode<Company,int>* companies_tree_with_workers;
-    AVLnode<Worker,int>* workers_tree_by_id;
-    AVLnode<Worker,int>* workers_tree_by_salary;
+    AVLnode<Company*,int>* companies_tree;
+    AVLnode<Company*,int>* companies_tree_with_workers;
+    AVLnode<Worker*,int>* workers_tree_by_id;
+    AVLnode<Worker*,int>* workers_tree_by_salary;
 
 public:
     Market() = default;
     ~Market() = default;
-    void AddCompany(Company* new_company);
-    void AddWorker(Worker* new_worker, Company* company_hiring);
+    void AddCompany(int company_id, int value);
+
 };
 
 #endif //AVLNODE_H_MARKET_H
