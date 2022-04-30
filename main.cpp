@@ -64,6 +64,11 @@ int main() {
     cout << "new value is :" << microsoft->getValue();
     cout << endl << endl << endl;
 
+
+    cout << "now Google issssssssssssssssss:  ";
+    print2D(google->getWorkersTreeById());
+
+
     microsoft->removeWorker(21,100);
 
     cout << "after firing 21,100" << endl;
@@ -77,6 +82,8 @@ int main() {
     microsoft->removeWorker(22,100);
     cout << "after firing 22,100" << endl;
 
+    cout << "now Google issssssssssssssssss NUMER 2222:  ";
+    print2D(google->getWorkersTreeById());
 
     print2D(microsoft->getWorkersTreeById());
     cout << endl << endl << endl << endl;
@@ -159,8 +166,14 @@ int main() {
     delete google;
     delete microsoft;
 
-
-    cout<<"bulbul gadol";
+//    int x=1,y=2,z=3;
+//    AVLnode<int*,int>* root = new AVLnode<int*,int>(&y,2,2);
+//    root->insertNew(&x,1,1);
+//    root->insertNew(&z,3,3);
+//    deleteTree(root,WITH_DATA);
+//    delete root;
+//    print2D(root);
+    cout<<"bulbul gadolll";
 
  return 0;
 }

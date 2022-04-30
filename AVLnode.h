@@ -158,16 +158,20 @@ namespace hw1 {
             return;
         }
         if (root->getRight() == nullptr && root->getLeft() == nullptr) {
+            int y = root -> getKey1();
+            cout << "hey" << y;
             our_delete(root,data);
             return;
         }
         if (root->getLeft() != nullptr) {
-            our_delete(root->getLeft(),data);
+            deleteTree(root->getLeft(),data);
+            root -> setLeft(nullptr);
         }
         if (root->getRight() != nullptr) {
-            our_delete(root->getRight(),data);
+            deleteTree(root->getRight(),data);
+            root ->setRight(nullptr);
         }
-        our_delete(root,data);
+        deleteTree(root,data);
     }
 
     template<class Data, class Key>
@@ -240,8 +244,8 @@ namespace hw1 {
         }
 
 //        cout << "nodes are " << endl << num_of_nodes1 << "," << num_of_nodes2 << endl;
-        AVLnode<Data, Key> **merged_trees_array = new AVLnode<Data, Key> *[(int) (pow(2, root1->getHeight() + 1) +
-                                                                                  pow(2, root2->getHeight() + 1))];
+        AVLnode<Data, Key> **merged_trees_array = new AVLnode<Data, Key> *[(int) ((pow(2, root1->getHeight() + 1) +
+                                                                                  pow(2, root2->getHeight() + 1)))];
         for (int i = 0; i < pow(2, root1->getHeight() + 1) + pow(2, root2->getHeight() + 1); i++) {
             merged_trees_array[i] = nullptr;
         }
@@ -271,12 +275,20 @@ namespace hw1 {
         int start = 0;
         merged_tree->insertInOrder(merged_trees_array, &start, merged_tree);
 //        cout << "got out of the func" << endl;
-        delete tree1_array;
-        delete tree2_array;
-        delete merged_trees_array;
+        delete[] tree1_array;
+        delete[] tree2_array;
+        delete[] merged_trees_array;
+        cout << "tree 1 is/; "<<endl;
+        print2D(root1);
+        cout << "tree 2 is/; "<<endl;
+        print2D(root2);
         deleteTree(root1,data);
         deleteTree(root2,data);
-        cout << " uploaded------------------------------";
+        cout << "tree 1  AFTER DELETE is/; "<<endl;
+        print2D(root1);
+        cout << "tree 2 AFTERDELETE is/; "<<endl;
+        print2D(root2);
+
         return merged_tree;
     }
 
@@ -507,7 +519,7 @@ namespace hw1 {
                 insert_node = insert_node->right;
                 continue;
             } else {
-                cout<<"wtf???????????????????????????????????????????????????????";
+                cout<<"wtf";
                 our_delete(new_node,WITHOUT_DATA);
                 return this;
             }

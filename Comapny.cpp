@@ -60,8 +60,9 @@ void  Company :: removeWorker(int remove_id,int salary){
     {
         setNewWorkersTreeById(deleteNode(remove_id,salary,workers_tree_by_id,WITHOUT_DATA));
         setNewWorkersTreeBySalary(deleteNode(salary,remove_id,workers_tree_by_salary,WITHOUT_DATA));
-        setHighestEarner();
         setNumOfWorkers(-1);
+        setHighestEarner();
+
     }
 }
 
@@ -101,8 +102,8 @@ void Company ::buyCompany(Company* company_to_buy, double factor)
     {
         throw CompanyValueNotSufficient();
     }
-    setNewWorkersTreeById(mergeTrees(this->workers_tree_by_id, company_to_buy->getWorkersTreeById(),WITHOUT_DATA));
-    setNewWorkersTreeBySalary(mergeTrees(this->workers_tree_by_salary,
+    this->setNewWorkersTreeById(mergeTrees(this->workers_tree_by_id, company_to_buy->getWorkersTreeById(),WITHOUT_DATA));
+    this->setNewWorkersTreeBySalary(mergeTrees(this->workers_tree_by_salary,
                                          company_to_buy->getWorkersTreeBySalary(),WITHOUT_DATA));
     //company_to_buy ->setNewWorkersTreeById(nullptr);
     // company_to_buy ->setNewWorkersTreeBySalary(nullptr);
