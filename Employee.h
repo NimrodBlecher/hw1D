@@ -1,21 +1,27 @@
-
 #ifndef AVLNODE_H_EMPLOYEE_H
 #define AVLNODE_H_EMPLOYEE_H
 #include "AVLnode.h"
-#include "Worker.h"
-#include "Company.h"
-using namespace  hw1;
+using namespace hw1;
 
-class Employee{
+class Employee {
     int id;
+    int my_company_id;
     int salary;
-    AVLnode<Company,int>* my_company;
+    int grade;
 public:
-    Employee(int id, int salary, AVLnode<Company,int>*);
-    void hireEmployee(AVLnode<Company,int>* comapny);
+    Employee() = default;
+    Employee(int id, int my_company_id, int salary, int grade);
     ~Employee() = default;
+    void updateGrade(int addition);
+    int getId() const;
+    int getSalary() const ;
+    void setSalary(int addition);
+    void setCompanyId(int company_id);
+    int getCompanyId() const;
 };
 
 
 
-#endif //AVLNODE_H_EMPLOYEE_H
+
+
+#endif //AVLNODE_H_Employee_H

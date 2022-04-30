@@ -6,13 +6,13 @@ namespace hw1 {
     class Exception : public std::exception {
     };
 
-    class WorkerDoesNotExist : public Exception {
+    class EmployeeDoesNotExist : public Exception {
     };
 
-    class WorkerAlreadyExist : public Exception {
+    class EmployeeAlreadyExist : public Exception {
     };
 
-    class CompanyHasNoWorkers : public Exception {
+    class CompanyHasNoEmployees : public Exception {
     };
 
     class CompanyValueNotSufficient : public Exception {
