@@ -86,6 +86,8 @@ namespace hw1 {
 
         AVLnode *find(Key A, Key B);
 
+        AVLnode *findKey1(Key A);
+
         void inOrder();
 
         void postOrder();
@@ -547,6 +549,23 @@ namespace hw1 {
             }
         }
         delete node_to_find;
+        return nullptr;
+    }
+
+    template<class Data, class Key>
+    AVLnode<Data, Key> *AVLnode<Data, Key>::findKey1(Key A) {
+        AVLnode<Data, Key> *find_node = this;
+        while (find_node != nullptr) {
+            if (find_node -> getKey1() < A) {
+                find_node = find_node->right;
+                continue;
+            } else if (find_node -> getKey1() > A) {
+                find_node = find_node->left;
+                continue;
+            } else {
+                return find_node;
+            }
+        }
         return nullptr;
     }
 
