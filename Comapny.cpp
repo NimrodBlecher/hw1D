@@ -13,6 +13,10 @@ int Company :: getId() const {
     return id;
 }
 
+int Company ::getNumOfWorkers() const {
+    return num_of_workers;
+}
+
 void Company::hireWorker (AVLnode<Worker*,int>* worker_by_id, AVLnode<Worker*,int>* worker_by_salary) {
     if(num_of_workers == 0)
     {
