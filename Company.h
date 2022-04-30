@@ -25,6 +25,7 @@ public:
     void  setValue(int new_value);
     void setHighestEarner();
     void setNumOfWorkers(int addition);
+    int getNumOfWorkers() const;
     void setNewWorkersTreeById(AVLnode<AVLnode<Worker*,int>*,int>* new_workers_tree_by_id);
     void setNewWorkersTreeBySalary(AVLnode<AVLnode<Worker*,int>*,int>* new_workers_tree_by_salary);
     AVLnode <AVLnode<Worker*,int>*,int>* getWorkersTreeById();

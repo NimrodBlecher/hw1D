@@ -75,27 +75,4 @@ Company* Market ::getCompany(int id) {
     return nullptr;
 }
 
-void Market:: getCompanyInfo(int company_id, int* value, int* num_of_employees) // made by yuval
-{
-    if(company_id<=0)
-    {
-        throw CompanyNegativeId();
-    }
-    if(value == nullptr || num_of_employees == nullptr)
-    {
-        throw NullInput();
-    }
-    AVLnode<Company*,int>* find_company = companies_tree->findKey1(company_id);
-    if(num_of_companies == 0 || find_company == nullptr )
-    {
-        throw CompanyDoesntExist();
-    }
-    *value =find_company->getData()->getValue();
-    *num_of_employees =find_company->getData()->getNumberOfWorkers();
-}
 
-void Market:: getEmployeeInfo(int worker_id, int* company_id, int* salary,int* grade) //
-{
-
-
-}
