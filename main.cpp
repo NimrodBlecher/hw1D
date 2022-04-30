@@ -185,6 +185,9 @@ highTech.addWorker(1,15,5,700);
 AVLnode<Company*,int>* companies = highTech.getCompaniesTree();
 print2D(companies);
 
+int x,y;
+highTech.getCompanyInfo(2,&x,&y);
+cout<<"value is: " << x<< "    number of workers is: " << y;
 
  return 0;
 }

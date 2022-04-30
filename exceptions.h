@@ -24,6 +24,11 @@ namespace hw1 {
     class CompanyDoesntExist : public Exception {
     };
 
+    class CompanyNegativeId : public Exception {
+    };
+
+    class NullInput : public Exception {
+    };
 
 #endif //EMPLOYEE_H_EXCEPTIONS_H
 }

@@ -17,6 +17,7 @@ public:
     int getSalary();
     void setSalary(int addition);
     void setComapnyId(int company_id);
+    int getCompanyId();
 };
 
 

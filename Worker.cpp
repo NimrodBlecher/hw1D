@@ -6,6 +6,10 @@ int Worker::getId() {
     return id;
 }
 
+int Worker::getCompanyId() {
+    return my_company_id;
+}
+
 int Worker::getSalary() {
     return salary;
 }
