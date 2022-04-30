@@ -160,7 +160,7 @@ int main() {
     delete microsoft;
 
 
-    cout<<"bulbul gadol";
+    cout<<"bulbul gadoll";
 
  return 0;
 }
