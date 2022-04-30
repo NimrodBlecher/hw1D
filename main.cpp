@@ -32,128 +32,135 @@ int main() {
     AVLnode<Worker*,int>* worker16_node = new AVLnode<Worker*,int>(worker16,worker16->getId(),worker16->getSalary());
 
 
-    Company google(1,100);
-    Company microsoft(2,1000);
+    Company*  google = new Company(1,100);
+    Company* microsoft = new Company(2,1000);
 
 
-    google.hireWorker(worker13_node);
-    google.hireWorker(worker14_node);
-    google.hireWorker(worker15_node);
-    google.hireWorker(worker16_node);
+    google->hireWorker(worker13_node);
+    google->hireWorker(worker14_node);
+    google->hireWorker(worker15_node);
+    google->hireWorker(worker16_node);
     cout << " Google emplopyees : ";
-    print2D(google.getWorkersTreeById());
+    print2D(google->getWorkersTreeById());
 
     cout << endl << endl << endl;
 
 
-    microsoft.hireWorker(worker21_node);
-    microsoft.hireWorker(worker22_node);
-    microsoft.hireWorker(worker23_node);
-    microsoft.hireWorker(worker24_node);
-    microsoft.hireWorker(worker25_node);
+    microsoft->hireWorker(worker21_node);
+    microsoft->hireWorker(worker22_node);
+    microsoft->hireWorker(worker23_node);
+    microsoft->hireWorker(worker24_node);
+    microsoft->hireWorker(worker25_node);
     cout << " Microsoft emplopyees : ";
-    print2D(microsoft.getWorkersTreeById());
+    print2D(microsoft->getWorkersTreeById());
     cout << endl << endl << endl;
 
 
-    microsoft.buyCompany(&google,1.365);
+    microsoft->buyCompany(google,1.365);
 
     cout << "Microsoft bought Google:  ";
-    print2D(microsoft.getWorkersTreeById());
+    print2D(microsoft->getWorkersTreeById());
     cout << endl << endl << endl;
-    cout << "new value is :" << microsoft.getValue();
+    cout << "new value is :" << microsoft->getValue();
     cout << endl << endl << endl;
 
-    microsoft.removeWorker(21,100);
+    microsoft->removeWorker(21,100);
 
     cout << "after firing 21,100" << endl;
 
 
-    print2D(microsoft.getWorkersTreeById());
+    print2D(microsoft->getWorkersTreeById());
     cout << endl << endl << endl << endl;
-    print2D(microsoft.getWorkersTreeBySalary());
+    print2D(microsoft->getWorkersTreeBySalary());
     cout << endl << endl << endl << endl;
 
-    microsoft.removeWorker(22,100);
+    microsoft->removeWorker(22,100);
     cout << "after firing 22,100" << endl;
 
 
-    print2D(microsoft.getWorkersTreeById());
+    print2D(microsoft->getWorkersTreeById());
     cout << endl << endl << endl << endl;
-    print2D(microsoft.getWorkersTreeBySalary());
+    print2D(microsoft->getWorkersTreeBySalary());
     cout << endl << endl << endl << endl;
 
 
 
-    cout << "height is:  "  << microsoft.getWorkersTreeById()->getHeight() << endl;
+    cout << "height is:  "  << microsoft->getWorkersTreeById()->getHeight() << endl;
 
-    microsoft.removeWorker(23,100);
-    microsoft.removeWorker(23,1100);
-    microsoft.removeWorker(10,100);
-    microsoft.removeWorker(24,100);
+    microsoft->removeWorker(23,100);
+    microsoft->removeWorker(23,1100);
+    microsoft->removeWorker(10,100);
+    microsoft->removeWorker(24,100);
 
     cout << "after firing 23,100 24,100" << endl;
-    print2D(microsoft.getWorkersTreeById());
-    microsoft.removeWorker(25,100000);
-    microsoft.removeWorker(13,100);
+    print2D(microsoft->getWorkersTreeById());
+    microsoft->removeWorker(25,100000);
+    microsoft->removeWorker(13,100);
     cout << "after firing 23,100 24,100 25,100000" << endl;
-    print2D(microsoft.getWorkersTreeById());
+    print2D(microsoft->getWorkersTreeById());
     cout << endl << endl << endl << endl;
-    print2D(microsoft.getWorkersTreeBySalary());
+    print2D(microsoft->getWorkersTreeBySalary());
     cout << endl << endl << endl << endl;
-    microsoft.removeWorker(13,500);
-    microsoft.removeWorker(14,300);
-    microsoft.removeWorker(15,300);
+    microsoft->removeWorker(13,500);
+    microsoft->removeWorker(14,300);
+    microsoft->removeWorker(15,300);
 
 
     cout << "after firing 13,500 14,300 15,300" << endl;
-    print2D(microsoft.getWorkersTreeById());
+    print2D(microsoft->getWorkersTreeById());
     cout << endl << endl << endl << endl;
-    print2D(microsoft.getWorkersTreeBySalary());
+    print2D(microsoft->getWorkersTreeBySalary());
     cout << endl << endl << endl << endl;
 
 
 
-    cout << "height is:  "  << microsoft.getWorkersTreeById()->getHeight() << endl;
-    microsoft.removeWorker(16,300);
+    cout << "height is:  "  << microsoft->getWorkersTreeById()->getHeight() << endl;
+    microsoft->removeWorker(16,300);
     cout << " should be nothign" << endl;
-    print2D(microsoft.getWorkersTreeById());
+    print2D(microsoft->getWorkersTreeById());
 
-    if(microsoft.getWorkersTreeById() == nullptr)
+    if(microsoft->getWorkersTreeById() == nullptr)
     {
         cout << "hehye";
     }
 
-    if((microsoft.getWorkersTreeBySalary()) == nullptr)
+    if((microsoft->getWorkersTreeBySalary()) == nullptr)
     {
     cout << " finally";
     }
 
+    cout << "whoho";
 //
 //    print2D(google.getWorkersTreeById());
 //    print2D(google.getWorkersTreeBySalary());
 
 
-//    delete worker13;
-//    delete worker14;
-//    delete worker15;
-//    delete worker16;
-//    delete worker21;
-//    delete worker22;
-//    delete worker23;
-//    delete worker24;
-//    delete worker25;
+    delete worker13;
+    delete worker14;
+    delete worker15;
+    delete worker16;
+    delete worker21;
+    delete worker22;
+    delete worker23;
+    delete worker24;
+    delete worker25;
 //
-//    delete worker13_node;
-//    delete worker14_node;
-//    delete worker15_node;
-//    delete worker16_node;
-//    delete worker21_node;
-//    delete worker22_node;
-//    delete worker23_node;
-//    delete worker24_node;
-//    delete worker25_node;
+    delete worker13_node;
+    delete worker14_node;
+    delete worker15_node;
+    delete worker16_node;
+    delete worker21_node;
+    delete worker22_node;
+    delete worker23_node;
+    delete worker24_node;
+    delete worker25_node;
 
+
+    delete google;
+    delete microsoft;
+
+
+    cout<<"bulbul gadol";
 
  return 0;
 }

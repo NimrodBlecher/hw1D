@@ -15,7 +15,7 @@ class Company {
 public:
     Company() = default;
     Company(int company_id,int value);
-    ~Company();
+    ~Company() =default;
     void hireWorker(AVLnode<Worker*,int>* worker);
     int getId() const;
     void getHighestEarner(int* earner_id) const;

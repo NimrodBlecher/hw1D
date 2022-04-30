@@ -5,11 +5,11 @@
 Company :: Company(int company_id,int value) : id(company_id), value(value),num_of_workers(0),highest_earner_id(0),
     workers_tree_by_id(nullptr) ,workers_tree_by_salary(nullptr){};
 
-Company :: ~Company()
-{
-        deleteTree(workers_tree_by_id,WITH_DATA);
-        deleteTree(workers_tree_by_salary,WITH_DATA);
-}
+//Company :: ~Company()
+//{
+//        deleteTree(workers_tree_by_id,WITHOUT_DATA);
+////        deleteTree(workers_tree_by_salary,WITHOUT_DATA);
+//}
 
 int Company :: getId() const {
     return id;
