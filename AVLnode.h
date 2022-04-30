@@ -117,7 +117,7 @@ namespace hw1 {
                 delete (node -> getData());
             }
         }
-                delete node;
+            delete node;
     }
 
     template<class Data, class Key>
@@ -218,10 +218,10 @@ namespace hw1 {
         int num_of_nodes1 = 0, num_of_nodes2 = 0;
 
         AVLnode<Data, Key> **tree1_array_start = tree1_array;
-
-        while (*tree1_array != nullptr) {
+        AVLnode<Data, Key> **tree1_array_counter = tree1_array;
+        while (*tree1_array_counter != nullptr) {
             num_of_nodes1++;
-            *tree1_array++;
+            *tree1_array_counter++;
         }
 //        cout << "hi" << endl;
         AVLnode<Data, Key> **tree2_array = new AVLnode<Data, Key> *[(int) pow(2, root2->getHeight() + 1)];
@@ -231,10 +231,12 @@ namespace hw1 {
         tree2_array = root2->inOrderToArray(tree2_array, &start2, root2);
 
         AVLnode<Data, Key> **tree2_array_start = tree2_array;
+        AVLnode<Data, Key> **tree2_array_counter = tree2_array;
 
-        while (*tree2_array != nullptr) {
+
+        while (*tree2_array_counter != nullptr) {
             num_of_nodes2++;
-            *tree2_array++;
+            *tree2_array_counter++;
         }
 
 //        cout << "nodes are " << endl << num_of_nodes1 << "," << num_of_nodes2 << endl;
@@ -269,8 +271,12 @@ namespace hw1 {
         int start = 0;
         merged_tree->insertInOrder(merged_trees_array, &start, merged_tree);
 //        cout << "got out of the func" << endl;
+        delete tree1_array;
+        delete tree2_array;
+        delete merged_trees_array;
         deleteTree(root1,data);
         deleteTree(root2,data);
+        cout << " uploaded------------------------------";
         return merged_tree;
     }
 
@@ -501,7 +507,8 @@ namespace hw1 {
                 insert_node = insert_node->right;
                 continue;
             } else {
-                our_delete(new_node,WITH_DATA);
+                cout<<"wtf???????????????????????????????????????????????????????";
+                our_delete(new_node,WITHOUT_DATA);
                 return this;
             }
         }
@@ -523,9 +530,11 @@ namespace hw1 {
                 find_node = find_node->left;
                 continue;
             } else {
+                delete node_to_find;
                 return find_node;
             }
         }
+        delete node_to_find;
         return nullptr;
     }
 
