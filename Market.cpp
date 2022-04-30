@@ -1,7 +1,7 @@
 #include "Market.h"
 
 Market ::Market() : companies_tree(nullptr),companies_tree_with_workers(nullptr),market_workers_tree_by_id(nullptr),
-        market_workers_tree_by_salary(nullptr),num_of_workers(0),num_of_companies(0) {};
+                    market_workers_tree_by_salary(nullptr),num_of_workers(0),num_of_companies(0) {};
 
 
 void Market:: addCompany(int company_id, int value)
@@ -13,8 +13,8 @@ void Market:: addCompany(int company_id, int value)
     Company* new_company =  new Company(company_id,value);
     if(num_of_companies == 0)
     {
-       companies_tree = new AVLnode<Company*,int>(new_company,company_id,value);
-       num_of_companies++;
+        companies_tree = new AVLnode<Company*,int>(new_company,company_id,value);
+        num_of_companies++;
     }
     else
     {
@@ -75,4 +75,27 @@ Company* Market ::getCompany(int id) {
     return nullptr;
 }
 
+void Market:: getCompanyInfo(int company_id, int* value, int* num_of_employees) // made by yuval
+{
+    if(company_id<=0)
+    {
+        throw CompanyNegativeId();
+    }
+    if(value == nullptr || num_of_employees == nullptr)
+    {
+        throw NullInput();
+    }
+    AVLnode<Company*,int>* find_company = companies_tree->findKey1(company_id);
+    if(num_of_companies == 0 || find_company == nullptr )
+    {
+        throw CompanyDoesntExist();
+    }
+    *value =find_company->getData()->getValue();
+    *num_of_employees =find_company->getData()->getNumberOfWorkers();
+}
 
+void Market:: getEmployeeInfo(int worker_id, int* company_id, int* salary,int* grade) //
+{
+
+
+}

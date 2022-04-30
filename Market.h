@@ -25,8 +25,8 @@ public:
     AVLnode<Worker*,int>* getWorkersTreeBySalary();
     AVLnode<Company*,int>* getCompaniesTree();
     Company* getCompany(int id);
-
-
+    void getCompanyInfo(int company_id, int* value, int* num_of_employees); // made by yuval
+    void  getEmployeeInfo(int worker_id, int* company_id, int* salary,int* grade); //
 
 };
 
