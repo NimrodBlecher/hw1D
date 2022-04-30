@@ -9,17 +9,23 @@ namespace hw1 {
     class WorkerDoesNotExist : public Exception {
     };
 
+    class WorkerAlreadyExist : public Exception {
+    };
+
     class CompanyHasNoWorkers : public Exception {
     };
 
     class CompanyValueNotSufficient : public Exception {
     };
 
-    class CompanyAlreadyExists : public Exception {
+    class CompanyAlreadyExist : public Exception {
+    };
+
+    class CompanyDoesntExist : public Exception {
     };
 
 
-}
+
 
 
 
