@@ -25,8 +25,5 @@ namespace hw1 {
     };
 
 
-
-
-
-
 #endif //EMPLOYEE_H_EXCEPTIONS_H
+}

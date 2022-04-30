@@ -21,6 +21,11 @@ public:
     ~Market() = default;
     void addCompany(int company_id, int value);
     void addWorker(int company_id, int employee_id,int grade, int salary);
+    AVLnode<Worker*,int>* getWorkersTreeById();
+    AVLnode<Worker*,int>* getWorkersTreeBySalary();
+    AVLnode<Company*,int>* getCompaniesTree();
+    Company* getCompany(int company_id);
+    int getNumOfCompanies();
 
 };
 

@@ -14,20 +14,21 @@ int Company :: getId() const {
 }
 
 void Company::hireWorker (AVLnode<Worker*,int>* worker_by_id, AVLnode<Worker*,int>* worker_by_salary) {
-    if(workers_tree_by_id == nullptr)
+    if(num_of_workers == 0)
     {
         workers_tree_by_id = new AVLnode<AVLnode<Worker*,int>*,int> (worker_by_id,worker_by_id->getData()->getId()
                                                    ,worker_by_id->getData()->getSalary());
         workers_tree_by_salary = new AVLnode<AVLnode<Worker*,int>*,int> (worker_by_salary,
                      worker_by_salary->getData()->getSalary(),worker_by_salary->getData()->getId());
-        this -> setHighestEarner();
-        this -> setNumOfWorkers(1);
-        return;
+
     }
-    workers_tree_by_id = workers_tree_by_id ->insertNew(worker_by_id,worker_by_id->getData()->getId()
-                                                        ,worker_by_id -> getData()->getSalary());
-    workers_tree_by_salary = workers_tree_by_salary ->insertNew(worker_by_salary,
-             worker_by_salary->getData()->getSalary(),worker_by_salary->getData()->getId());
+    else
+    {
+        workers_tree_by_id = workers_tree_by_id ->insertNew(worker_by_id,worker_by_id->getData()->getId()
+                ,worker_by_id -> getData()->getSalary());
+        workers_tree_by_salary = workers_tree_by_salary ->insertNew(worker_by_salary,
+                                                                    worker_by_salary->getData()->getSalary(),worker_by_salary->getData()->getId());
+    }
     this -> setNumOfWorkers(1);
     this -> setHighestEarner();
 }
@@ -54,7 +55,7 @@ void Company ::  getHighestEarner(int* earner_id ) const {
 
 void  Company :: removeWorker(int remove_id,int salary){
     AVLnode<AVLnode<Worker*,int>*,int>* worker_by_id = workers_tree_by_id -> find(remove_id,salary);
-    if (worker_by_id != nullptr)
+    if (num_of_workers!=0 && worker_by_id != nullptr)
     {
         setNewWorkersTreeById(deleteNode(remove_id,salary,workers_tree_by_id,WITHOUT_DATA));
         setNewWorkersTreeBySalary(deleteNode(salary,remove_id,workers_tree_by_salary,WITHOUT_DATA));
