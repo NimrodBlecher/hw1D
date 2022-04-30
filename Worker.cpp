@@ -10,6 +10,7 @@ int Worker::getSalary() {
     return salary;
 }
 
+
 void Worker:: setSalary(int addition)
 {
     salary += addition;

@@ -10,6 +10,9 @@ using namespace hw1;
 
 int main() {
 
+    cout << "hereeyoyoyo";
+    cout<<"shalom nimrod ze hadash";
+
     Worker* worker21 = new Worker(21, 2, 100, 2);
     Worker* worker22 = new Worker(22, 2, 100, 2);
     Worker* worker23 = new Worker(23, 2, 100, 2);
@@ -128,7 +131,7 @@ int main() {
     {
     cout << " finally";
     }
-
+    print2D(google.getWorkersTreeById());
 
     delete worker13;
     delete worker14;
