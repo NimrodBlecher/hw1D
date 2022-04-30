@@ -152,22 +152,22 @@ namespace hw1 {
     void deleteTree(AVLnode<Data,Key>* root);
 
     template<class Data, class Key>
-    void deleteTree(AVLnode<Data,Key>* root) {
+    void deleteTree(AVLnode<Data,Key>* root,bool data) {
         if(root == nullptr)
         {
             return;
         }
         if (root->getRight() == nullptr && root->getLeft() == nullptr) {
-            our_delete(root,WITH_DATA);
+            our_delete(root,data);
             return;
         }
         if (root->getLeft() != nullptr) {
-            our_delete(root->getLeft(),WITH_DATA);
+            our_delete(root->getLeft(),data);
         }
         if (root->getRight() != nullptr) {
-            our_delete(root->getRight(),WITH_DATA);
+            our_delete(root->getRight(),data);
         }
-        our_delete(root,WITH_DATA);
+        our_delete(root,data);
     }
 
     template<class Data, class Key>
@@ -204,7 +204,11 @@ namespace hw1 {
 
 
     template<class Data, class Key>
-    AVLnode<Data, Key> *mergeTrees(AVLnode<Data, Key> *root1, AVLnode<Data, Key> *root2) {
+    AVLnode<Data, Key> *mergeTrees(AVLnode<Data, Key> *root1, AVLnode<Data, Key> *root2,bool data);
+
+
+    template<class Data, class Key>
+    AVLnode<Data, Key> *mergeTrees(AVLnode<Data, Key> *root1, AVLnode<Data, Key> *root2,bool data) {
         int start1 = 0, start2 = 0;
         AVLnode<Data, Key> **tree1_array = new AVLnode<Data, Key> *[(int) pow(2, root1->getHeight() + 1)];
         for (int i = 0; i < pow(2, root1->getHeight() + 1); i++) {
@@ -265,6 +269,8 @@ namespace hw1 {
         int start = 0;
         merged_tree->insertInOrder(merged_trees_array, &start, merged_tree);
 //        cout << "got out of the func" << endl;
+        deleteTree(root1,data);
+        deleteTree(root2,data);
         return merged_tree;
     }
 
@@ -762,7 +768,7 @@ namespace hw1 {
     void merge_ordered_arrays(AVLnode<Data, Key> *source1[], AVLnode<Data, Key> *source2[],
                               AVLnode<Data, Key> *destination[]) {
 //        cout << "ji" << endl;
-        int i, j = 0;
+        int i = 0, j = 0;
         while (source1[i] != nullptr && source2[j] != nullptr) {
             if (*(source1[i]) < *(source2[j])) {
                 destination[i + j] = source1[i];

@@ -85,7 +85,7 @@ int main() {
 
 
 
-    cout << "height is:  "  << google.getWorkersTreeById()->getHeight() << endl;
+    cout << "height is:  "  << microsoft.getWorkersTreeById()->getHeight() << endl;
 
     microsoft.removeWorker(23,100);
     microsoft.removeWorker(23,1100);
@@ -114,7 +114,7 @@ int main() {
 
 
 
-    cout << "height is:  "  << google.getWorkersTreeById()->getHeight() << endl;
+    cout << "height is:  "  << microsoft.getWorkersTreeById()->getHeight() << endl;
     microsoft.removeWorker(16,300);
     cout << " should be nothign" << endl;
     print2D(microsoft.getWorkersTreeById());
@@ -129,16 +129,30 @@ int main() {
     cout << " finally";
     }
 
+//
+//    print2D(google.getWorkersTreeById());
+//    print2D(google.getWorkersTreeBySalary());
 
-    delete worker13;
-    delete worker14;
-    delete worker15;
-    delete worker16;
-    delete worker21;
-    delete worker22;
-    delete worker23;
-    delete worker24;
-    delete worker25;
+
+//    delete worker13;
+//    delete worker14;
+//    delete worker15;
+//    delete worker16;
+//    delete worker21;
+//    delete worker22;
+//    delete worker23;
+//    delete worker24;
+//    delete worker25;
+//
+//    delete worker13_node;
+//    delete worker14_node;
+//    delete worker15_node;
+//    delete worker16_node;
+//    delete worker21_node;
+//    delete worker22_node;
+//    delete worker23_node;
+//    delete worker24_node;
+//    delete worker25_node;
 
 
  return 0;
