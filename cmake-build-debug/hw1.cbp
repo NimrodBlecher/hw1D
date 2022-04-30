@@ -83,6 +83,39 @@
 		<Unit filename="C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/AVLnode.h">
 			<Option target="hw1"/>
 		</Unit>
+		<Unit filename="C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/Comapny.cpp">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/Company.h">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/Employee.cpp">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/Employee.h">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/Market.cpp">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/Market.h">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/Worker.cpp">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/Worker.h">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/exceptions.h">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/helpers.cpp">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/helpers.h">
+			<Option target="hw1"/>
+		</Unit>
 		<Unit filename="C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/main.cpp">
 			<Option target="hw1"/>
 		</Unit>

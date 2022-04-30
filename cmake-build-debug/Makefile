@@ -128,6 +128,126 @@ hw1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/build
 .PHONY : hw1/fast
 
+Comapny.obj: Comapny.cpp.obj
+.PHONY : Comapny.obj
+
+# target to build an object file
+Comapny.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Comapny.cpp.obj
+.PHONY : Comapny.cpp.obj
+
+Comapny.i: Comapny.cpp.i
+.PHONY : Comapny.i
+
+# target to preprocess a source file
+Comapny.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Comapny.cpp.i
+.PHONY : Comapny.cpp.i
+
+Comapny.s: Comapny.cpp.s
+.PHONY : Comapny.s
+
+# target to generate assembly for a file
+Comapny.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Comapny.cpp.s
+.PHONY : Comapny.cpp.s
+
+Employee.obj: Employee.cpp.obj
+.PHONY : Employee.obj
+
+# target to build an object file
+Employee.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Employee.cpp.obj
+.PHONY : Employee.cpp.obj
+
+Employee.i: Employee.cpp.i
+.PHONY : Employee.i
+
+# target to preprocess a source file
+Employee.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Employee.cpp.i
+.PHONY : Employee.cpp.i
+
+Employee.s: Employee.cpp.s
+.PHONY : Employee.s
+
+# target to generate assembly for a file
+Employee.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Employee.cpp.s
+.PHONY : Employee.cpp.s
+
+Market.obj: Market.cpp.obj
+.PHONY : Market.obj
+
+# target to build an object file
+Market.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Market.cpp.obj
+.PHONY : Market.cpp.obj
+
+Market.i: Market.cpp.i
+.PHONY : Market.i
+
+# target to preprocess a source file
+Market.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Market.cpp.i
+.PHONY : Market.cpp.i
+
+Market.s: Market.cpp.s
+.PHONY : Market.s
+
+# target to generate assembly for a file
+Market.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Market.cpp.s
+.PHONY : Market.cpp.s
+
+Worker.obj: Worker.cpp.obj
+.PHONY : Worker.obj
+
+# target to build an object file
+Worker.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Worker.cpp.obj
+.PHONY : Worker.cpp.obj
+
+Worker.i: Worker.cpp.i
+.PHONY : Worker.i
+
+# target to preprocess a source file
+Worker.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Worker.cpp.i
+.PHONY : Worker.cpp.i
+
+Worker.s: Worker.cpp.s
+.PHONY : Worker.s
+
+# target to generate assembly for a file
+Worker.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Worker.cpp.s
+.PHONY : Worker.cpp.s
+
+helpers.obj: helpers.cpp.obj
+.PHONY : helpers.obj
+
+# target to build an object file
+helpers.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/helpers.cpp.obj
+.PHONY : helpers.cpp.obj
+
+helpers.i: helpers.cpp.i
+.PHONY : helpers.i
+
+# target to preprocess a source file
+helpers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/helpers.cpp.i
+.PHONY : helpers.cpp.i
+
+helpers.s: helpers.cpp.s
+.PHONY : helpers.s
+
+# target to generate assembly for a file
+helpers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/helpers.cpp.s
+.PHONY : helpers.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -161,6 +281,21 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... hw1
+	@echo ... Comapny.obj
+	@echo ... Comapny.i
+	@echo ... Comapny.s
+	@echo ... Employee.obj
+	@echo ... Employee.i
+	@echo ... Employee.s
+	@echo ... Market.obj
+	@echo ... Market.i
+	@echo ... Market.s
+	@echo ... Worker.obj
+	@echo ... Worker.i
+	@echo ... Worker.s
+	@echo ... helpers.obj
+	@echo ... helpers.i
+	@echo ... helpers.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
