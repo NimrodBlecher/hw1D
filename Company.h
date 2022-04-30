@@ -21,7 +21,7 @@ public:
     void getHighestEarner(int* earner_id) const;
     void removeWorker(int remove_id,int salary);
     int  getValue() const;
-    int  getNumberOfWorkers();
+    int  getNumberOfWorkers() const;
     void  setValue(int new_value);
     void setHighestEarner();
     void setNumOfWorkers(int addition);
