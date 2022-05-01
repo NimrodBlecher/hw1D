@@ -8,13 +8,13 @@ using namespace  hw1;
 
 class Market {
     AVLnode<Company*,int>* companies_tree;
-    AVLnode<Company*,int>* companies_tree_with_employees;
+    AVLnode<AVLnode<Company*,int>*,int>* companies_tree_with_employees;
     AVLnode<Employee*,int>* market_employees_tree_by_id;
     AVLnode<Employee*,int>* market_employees_tree_by_salary;
-    AVLnode<AVLnode<Company*,int>*,int>* employees_route_to_company;
+    AVLnode<AVLnode<AVLnode<Company*,int>*,int>*,int>* employees_route_to_company;
     int num_of_employees;
     int num_of_companies;
-    int num_of_comapny_with_employees;
+    int num_of_company_with_employees;
 
 
 public:
@@ -22,14 +22,17 @@ public:
     ~Market() = default;
     void addCompany(int company_id, int value);
     void addEmployee(int company_id, int employee_id,int grade, int salary);
+    void removeCompany(int company_id);
+    void removeEmployee (int employee_id);
     AVLnode<Employee*,int>* getEmployeesTreeById();
     AVLnode<Employee*,int>* getEmployeesTreeBySalary();
-    AVLnode<AVLnode<Company*,int>*,int>* getEmployeesRouteTree();
+    AVLnode<AVLnode<AVLnode<Company*,int>*,int>*,int> * getEmployeesRouteTree();
     AVLnode<Company*,int>* getCompaniesTree();
+    AVLnode<AVLnode<Company*,int>*,int>* getCompaniesTreeWithEmployees();
     Company* getCompany(int id);
-    void getCompanyInfo(int company_id, int* value, int* num_of_employees); // made by yuval
+    void getCompanyInfo(int company_id, int* value, int* number_of_employees); // made by yuval
     void  getEmployeeInfo(int employee_id, int* company_id, int* salary,int* grade);
-//    void Remove//
+
 
 
 
