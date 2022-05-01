@@ -200,30 +200,6 @@ Market.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Market.cpp.s
 .PHONY : Market.cpp.s
 
-Worker.obj: Worker.cpp.obj
-.PHONY : Worker.obj
-
-# target to build an object file
-Worker.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Worker.cpp.obj
-.PHONY : Worker.cpp.obj
-
-Worker.i: Worker.cpp.i
-.PHONY : Worker.i
-
-# target to preprocess a source file
-Worker.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Worker.cpp.i
-.PHONY : Worker.cpp.i
-
-Worker.s: Worker.cpp.s
-.PHONY : Worker.s
-
-# target to generate assembly for a file
-Worker.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Worker.cpp.s
-.PHONY : Worker.cpp.s
-
 helpers.obj: helpers.cpp.obj
 .PHONY : helpers.obj
 
@@ -290,9 +266,6 @@ help:
 	@echo ... Market.obj
 	@echo ... Market.i
 	@echo ... Market.s
-	@echo ... Worker.obj
-	@echo ... Worker.i
-	@echo ... Worker.s
 	@echo ... helpers.obj
 	@echo ... helpers.i
 	@echo ... helpers.s

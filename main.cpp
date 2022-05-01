@@ -53,9 +53,20 @@ print2D(highTech.getCompany(1) -> getEmployeesTreeById());
     cout << endl << endl << endl << endl;
     print2D(highTech.getCompany(2) -> getEmployeesTreeById());
 
-int x,y;
+int x,y,a,b,c;
 highTech.getCompanyInfo(2,&x,&y);
-cout<<"value is: " << x<< "    number of employees is: " << y;
+cout<<"value is: " << x<< "    number of employees is: " << y<<endl;
+highTech.increaseCompanyValue(2,123);
+highTech.getCompanyInfo(2,&x,&y);
+cout<<"new value is value is: " << x<<endl;
+
+
+highTech.getEmployeeInfo(17,&a,&b,&c);
+cout<<"company id is: " << a<< "    salary is: " << b << "    grade is:" << c<<endl;
+
+highTech.promoteEmployee(17,8000,2);
+cout<<"company id is: " << a<< "    salary is: " << b << "    grade is:" << c<<endl;
+
 
  return 0;
 }

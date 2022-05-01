@@ -27,6 +27,15 @@ namespace hw1 {
     class CompanyNegativeId : public Exception {
     };
 
+    class NegativeIncreaseValue : public Exception {
+    };
+
+    class NegativeSalaryIncrease : public Exception {
+    };
+
+    class EmployeeNegativeId : public Exception {
+    };
+
     class NullInput : public Exception {
     };
 

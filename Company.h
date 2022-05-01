@@ -22,7 +22,7 @@ public:
     void removeEmployee(int remove_id,int salary);
     int  getValue() const;
     int  getNumberOfEmployees() const;
-    void  setValue(int new_value);
+    void  setValue(int addition);
     void setHighestEarner();
     void setNumOfEmployees(int addition);
     int getNumOfEmployees() const;

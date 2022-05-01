@@ -5,8 +5,8 @@
 Company :: Company(int company_id,int value) : id(company_id), value(value),num_of_employees(0),highest_earner_id(0),
     employees_tree_by_id(nullptr) ,employees_tree_by_salary(nullptr){};
 
-void Company ::setValue(int new_value) {
-    value = new_value;
+void Company ::setValue(int addition) {
+    value += addition;
 }
 
 int Company :: getId() const {

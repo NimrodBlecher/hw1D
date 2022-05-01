@@ -101,12 +101,6 @@
 		<Unit filename="C:/Users/yuval/Desktop/Technion/SemesterD/DaSt-234218/HWs/HW1_git/hw1D/Market.h">
 			<Option target="hw1"/>
 		</Unit>
-		<Unit filename="C:/Users/yuval/Desktop/Technion/SemesterD/DaSt-234218/HWs/HW1_git/hw1D/Worker.cpp">
-			<Option target="hw1"/>
-		</Unit>
-		<Unit filename="C:/Users/yuval/Desktop/Technion/SemesterD/DaSt-234218/HWs/HW1_git/hw1D/Worker.h">
-			<Option target="hw1"/>
-		</Unit>
 		<Unit filename="C:/Users/yuval/Desktop/Technion/SemesterD/DaSt-234218/HWs/HW1_git/hw1D/exceptions.h">
 			<Option target="hw1"/>
 		</Unit>

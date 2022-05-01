@@ -2,7 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/hw1.dir/Comapny.cpp.obj"
   "CMakeFiles/hw1.dir/Employee.cpp.obj"
   "CMakeFiles/hw1.dir/Market.cpp.obj"
-  "CMakeFiles/hw1.dir/Worker.cpp.obj"
   "CMakeFiles/hw1.dir/helpers.cpp.obj"
   "CMakeFiles/hw1.dir/main.cpp.obj"
   "hw1.exe"

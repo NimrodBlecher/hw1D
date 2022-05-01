@@ -15,6 +15,7 @@ public:
     void updateGrade(int addition);
     int getId() const;
     int getSalary() const ;
+    int getGrade() const;
     void setSalary(int addition);
     void setCompanyId(int company_id);
     int getCompanyId() const;
