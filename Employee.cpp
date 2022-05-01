@@ -35,3 +35,7 @@ void Employee :: updateGrade(int addition)
 {
     grade += addition;
 }
+
+int Employee ::getGrade() const {
+    return grade;
+}

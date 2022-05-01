@@ -39,5 +39,8 @@ namespace hw1 {
     class NullInput : public Exception {
     };
 
+    class CompanyHasEmployeesAntCanNotBeDeleted : public Exception{
+    };
+
 #endif //EMPLOYEE_H_EXCEPTIONS_H
 }

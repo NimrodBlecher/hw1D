@@ -15,7 +15,7 @@ int Company :: getId() const {
 
 
 
-int Company ::getNumberOfEmployees() const {
+int Company ::getNumOfEmployees() const {
     return num_of_employees;
 }
 
@@ -67,6 +67,11 @@ void  Company :: removeEmployee(int remove_id,int salary){
         setNewEmployeesTreeBySalary(deleteNode(salary,remove_id,employees_tree_by_salary,WITHOUT_DATA));
         setNumOfEmployees(-1);
         setHighestEarner();
+        if (num_of_employees == 0)
+        {
+            setNewEmployeesTreeById(nullptr);
+            setNewEmployeesTreeBySalary(nullptr);
+        }
     }
 }
 

@@ -386,7 +386,10 @@ namespace hw1 {
     void print2DUtil(AVLnode<Data, Key> *root, int space) {
         // Base case
         if (root == nullptr)
+        {
             return;
+        }
+
 
         // Increase distance between levels
         space += 10;
@@ -409,6 +412,12 @@ namespace hw1 {
     template<class Data, class Key>
     void print2D(AVLnode<Data, Key> *root) {
         // Pass initial space count as 0
+        if (root == nullptr)
+        {
+            cout <<"null you dumb";
+            return;
+        }
+
         print2DUtil(root, 0);
     }
 
@@ -493,6 +502,7 @@ namespace hw1 {
             node->setHeight();
             node = node->balanceTree();
             if (node->parent == nullptr) {
+               // print2D(node);
                 return node;
             }
             node = node->parent;
@@ -714,7 +724,7 @@ namespace hw1 {
                     find_node->setData(find_node->getRight()->getData());
                     our_delete(find_node->getRight(),data);
                     find_node->setRight(nullptr);
-                    return find_node;
+                    return find_node-> fixToRoot(); ////// ????????????????
                 }
                 if (*find_node < *find_node_dad) {
                     find_node_dad->setLeft(find_node->getRight());
