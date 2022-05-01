@@ -136,7 +136,7 @@ void Market ::removeEmployee(int employee_id) {
     int salary = employee_in_id_market_tree->getKey2();
     int company_id = company_node -> getKey1();
     employees_route_to_company = deleteNode(employee_id,company_id,employees_route_to_company,WITHOUT_DATA);
-    market_employees_tree_by_salary = deleteNode(salary,employee_id,market_employees_tree_by_salary,WITH_DATA);
+    market_employees_tree_by_salary = deleteNode(salary,employee_id,market_employees_tree_by_salary,WITHOUT_DATA);
     my_company -> removeEmployee(employee_id,salary);
     num_of_employees--;
     if (my_company -> getNumOfEmployees() == 0)
@@ -144,7 +144,7 @@ void Market ::removeEmployee(int employee_id) {
         companies_tree_with_employees = deleteNode(company_id,my_company->getValue(),companies_tree_with_employees,WITHOUT_DATA);
         num_of_company_with_employees--;
     }
-   market_employees_tree_by_id = deleteNode(employee_id,salary,market_employees_tree_by_id,WITHOUT_DATA);
+   market_employees_tree_by_id = deleteNode(employee_id,salary,market_employees_tree_by_id,WITH_DATA);
 }
 
 void Market :: removeCompany(int company_id) {
