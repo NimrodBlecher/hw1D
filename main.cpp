@@ -26,15 +26,6 @@ int main() {
     highTech.addEmployee(30,32,13,600);
 
 
-//    AVLnode<int,int>* companies = highTech.getCompaniesTree();
-//    cout << "Companies By Id is : " << endl;
-//    cout << endl << endl << endl << endl;
-//    print2D(companies);
-//    cout << "Employees By Id is : " << endl;
-//    cout << endl << endl << endl << endl;
-//    print2D(highTech.getEmployeesTreeById());
-
-
     highTech.removeEmployee(11);
     highTech.removeEmployee(21);
     highTech.removeEmployee(22);
@@ -83,26 +74,6 @@ int main() {
     print2D(highTech.getCompaniesTree());
     print2D(highTech.getEmployeesTreeById());
     print2D(highTech.getEmployeesTreeBySalary());
-
-//    Company* company_20 = highTech.getCompany(20);
-////    print2D(company_20->getEmployeesTreeById());
-//   Company* company_10 = highTech.getCompany(10);
-////    print2D(company_10->getEmployeesTreeById());
-//
-//
-//    print2D(highTech.getCompaniesTreeWithEmployees());
-
-
-
-//    print2D(company_20->getEmployeesTreeById());
-//    print2D(company_10->getEmployeesTreeById());
-
-
-
-
-
-
-
 
 
 return 0;

@@ -222,6 +222,9 @@ void Market:: increaseCompanyValue(int company_id, int value_to_increase)
     }
     int current_value = company_info -> getData();
     company_info->setData(value_to_increase+current_value);
-    Company* company = companies_with_employees_tree ->findKey1(company_id) -> getData();
-    company ->setValue(value_to_increase);
+    AVLnode<Company*,int>* company_node = companies_with_employees_tree ->findKey1(company_id);
+    if (num_of_company_with_employees != 0 &&  company_node != nullptr)
+    {
+        company_node -> getData() -> setValue(value_to_increase);
+    }
 }
