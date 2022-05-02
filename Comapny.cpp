@@ -122,3 +122,27 @@ void Company ::buyCompany(Company* company_to_buy, double factor)
 }
 
 
+void Company ::promoteEmployee(int employee_id,int salary_addition,bool upgrade) {
+    AVLnode<Employee*,int>* employee_node_by_id = employees_tree_by_id ->findKey1(employee_id);
+    Employee* employee = employee_node_by_id -> getData();
+    if (upgrade == UPGRADE)
+    {
+        employee ->updateGrade(1);
+    }
+    int old_salary = employee -> getSalary();
+    employee->setSalary(salary_addition);
+    int new_salary = employee -> getSalary();
+    if (num_of_employees == 1)
+    {
+        employees_tree_by_id ->setKey2(new_salary);
+        employees_tree_by_salary ->setKey1(new_salary);
+    }
+    else
+    {
+        employees_tree_by_id = deleteNode(employee_id,old_salary,employees_tree_by_id);
+        employees_tree_by_salary = deleteNode(old_salary,employee_id,employees_tree_by_salary);
+        employees_tree_by_id = employees_tree_by_id ->insertNew(employee,employee_id,new_salary);
+        employees_tree_by_salary = employees_tree_by_salary ->insertNew(employee,new_salary,employee_id);
+    }
+
+}

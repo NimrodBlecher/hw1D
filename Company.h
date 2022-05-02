@@ -2,6 +2,8 @@
 #define AVLNODE_H_COMPANY_H
 #include "Employee.h"
 #include "AVLnode.h"
+#define UPGRADE true
+#define DO_NOT_UPGRADE false
 using namespace  hw1;
 
 
@@ -23,6 +25,7 @@ public:
     void removeEmployee(int remove_id,int salary);
     int  getValue() const;
     void  setValue(int addition);
+    void promoteEmployee(int employee_id,int salary_addition,bool upgrade);
     void setHighestEarner();
     void setNumOfEmployees(int addition);
     int getNumOfEmployees() const;
@@ -31,10 +34,6 @@ public:
     AVLnode <Employee*,int>* getEmployeesTreeById();
     AVLnode <Employee*,int>* getEmployeesTreeBySalary();
     void buyCompany(Company* company_to_buy, double factor);
-
-
-
-
 };
 
 
