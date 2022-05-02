@@ -5,15 +5,13 @@ CMakeFiles/hw1.dir/Comapny.cpp.o
  /home/yuvalrosman/dast_new/AVLnode.h
  /home/yuvalrosman/dast_new/Comapny.cpp
  /home/yuvalrosman/dast_new/Company.h
- /home/yuvalrosman/dast_new/Worker.h
+ /home/yuvalrosman/dast_new/Employee.h
  /home/yuvalrosman/dast_new/exceptions.h
  /home/yuvalrosman/dast_new/helpers.h
 CMakeFiles/hw1.dir/Employee.cpp.o
  /home/yuvalrosman/dast_new/AVLnode.h
- /home/yuvalrosman/dast_new/Company.h
  /home/yuvalrosman/dast_new/Employee.cpp
  /home/yuvalrosman/dast_new/Employee.h
- /home/yuvalrosman/dast_new/Worker.h
  /home/yuvalrosman/dast_new/exceptions.h
  /home/yuvalrosman/dast_new/helpers.h
 CMakeFiles/hw1.dir/Market.cpp.o
@@ -22,13 +20,6 @@ CMakeFiles/hw1.dir/Market.cpp.o
  /home/yuvalrosman/dast_new/Employee.h
  /home/yuvalrosman/dast_new/Market.cpp
  /home/yuvalrosman/dast_new/Market.h
- /home/yuvalrosman/dast_new/Worker.h
- /home/yuvalrosman/dast_new/exceptions.h
- /home/yuvalrosman/dast_new/helpers.h
-CMakeFiles/hw1.dir/Worker.cpp.o
- /home/yuvalrosman/dast_new/AVLnode.h
- /home/yuvalrosman/dast_new/Worker.cpp
- /home/yuvalrosman/dast_new/Worker.h
  /home/yuvalrosman/dast_new/exceptions.h
  /home/yuvalrosman/dast_new/helpers.h
 CMakeFiles/hw1.dir/helpers.cpp.o
@@ -39,7 +30,6 @@ CMakeFiles/hw1.dir/main.cpp.o
  /home/yuvalrosman/dast_new/Company.h
  /home/yuvalrosman/dast_new/Employee.h
  /home/yuvalrosman/dast_new/Market.h
- /home/yuvalrosman/dast_new/Worker.h
  /home/yuvalrosman/dast_new/exceptions.h
  /home/yuvalrosman/dast_new/helpers.h
  /home/yuvalrosman/dast_new/main.cpp

@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/hw1.dir/CHANGES.cpp.o"
   "CMakeFiles/hw1.dir/Comapny.cpp.o"
   "CMakeFiles/hw1.dir/Employee.cpp.o"
   "CMakeFiles/hw1.dir/Market.cpp.o"

@@ -25,6 +25,8 @@ public:
     void removeEmployee (int employee_id);
     void setHighestEarnerId ();
     int getHighestEarnerId () const;
+    int getNumOfCompaniesWithEmp () const;
+    int getNumOfEmployees () const;
     AVLnode<Employee*,int>* getEmployeesTreeById();
     AVLnode<Employee*,int>* getEmployeesTreeBySalary();
     AVLnode<int,int>* getCompaniesTree();
@@ -38,8 +40,9 @@ public:
     void acquireCompany(int acquirer_id, int target_id, double factor);
     void getHighestEarner(int company_id,int* employee_id);
     void getAllEmployeesBySalary(int company_id, int** employees, int* num_of_employees);
-    void inReverseOrderToSalaryArray(int** employees_by_salary_array,int* start, AVLnode<Employee*,int>* root  );
+    void inReverseOrderToSalaryArray(int* employees_by_salary_array,int* start, AVLnode<Employee*,int>* root  );
     void getHighestEarnerInEachCompany(int number_of_companies_to_find, int* employees_by_id[]);
+    void inOrderToEmployeesArray(int* employees_array, AVLnode<Company*,int>* root,int* start,int* times_left);
 
 
 

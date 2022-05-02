@@ -50,5 +50,10 @@ namespace hw1 {
      class NoEmployeesInMarket : public Exception{
      };
 
+    class NotEnoughCompaniesWithEmployees : public Exception{
+    };
+
+    class AllocationError : public Exception {
+    };
 #endif //EMPLOYEE_H_EXCEPTIONS_H
 }

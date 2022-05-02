@@ -356,6 +356,7 @@ void Market:: acquireCompany(int acquirer_id, int target_id, double factor)
     (company_buying->getData())->buyCompany(company_to_buy->getData(),factor);
     companies_with_employees_tree = deleteNode(target_id,target_id,companies_with_employees_tree);
     removeCompany(target_id);
+    num_of_company_with_employees--;
     delete company_to_buy_and_delete;
 }
 
@@ -409,10 +410,13 @@ void Market:: getAllEmployeesBySalary(int company_id, int** employees, int* num_
             throw NoEmployeesInMarket();
         }
         *num_of_employees = this->num_of_employees;
-        int** tmp_array = new int*[this->num_of_employees];
+        *employees = (int*)malloc(this->num_of_employees  * sizeof(**employees));
+        if(*employees == nullptr)
+        {
+            throw AllocationError();
+        }
         int start =0;
-        inReverseOrderToSalaryArray(tmp_array,&start,market_employees_salary_tree);
-        employees = tmp_array;
+        inReverseOrderToSalaryArray(*employees,&start,market_employees_salary_tree);
     }
     else
     {
@@ -428,14 +432,14 @@ void Market:: getAllEmployeesBySalary(int company_id, int** employees, int* num_
         }
         Company* company = company_node->getData();
         *num_of_employees = company->getNumOfEmployees();
-        int** tmp_array = new int*[company->getNumOfEmployees()];
+        *employees = (int*)malloc(company->getNumOfEmployees() * sizeof(**employees));
         int start =0;
-        inReverseOrderToSalaryArray(tmp_array,&start,company->getEmployeesTreeBySalary());
-        employees = tmp_array;
+        inReverseOrderToSalaryArray(*employees,&start,company->getEmployeesTreeBySalary());
+
     }
 }
 
-void Market:: inReverseOrderToSalaryArray(int** employees_by_salary_array,int* start, AVLnode<Employee*,int>* root )
+void Market:: inReverseOrderToSalaryArray(int* employees_by_salary_array,int* start, AVLnode<Employee*,int>* root )
 {
     cout<<"yoyoyo";
     if (root == nullptr) {
@@ -452,4 +456,73 @@ void Market:: inReverseOrderToSalaryArray(int** employees_by_salary_array,int* s
     }
 }
 
+
+
+
+void Market ::getHighestEarnerInEachCompany(int number_of_companies_to_find, int **employees_by_id) {
+    if (number_of_companies_to_find == 0 || employees_by_id == nullptr)
+    {
+        throw InvalidInput();
+    }
+    if (num_of_company_with_employees < number_of_companies_to_find)
+    {
+        throw NotEnoughCompaniesWithEmployees();
+    }
+    *employees_by_id = (int*)malloc(number_of_companies_to_find  * sizeof(int));
+    if(*employees_by_id == nullptr)
+    {
+        throw AllocationError();
+    }
+    int y = number_of_companies_to_find;
+    int x = 0;
+    AVLnode<Company*,int>* root = companies_with_employees_tree;
+    inOrderToEmployeesArray(*employees_by_id,root,&x,&y);
+//    for ( int i= 0; i <2 ; i++)
+//    {
+//        cout<<*employees_by_id[i] << "<-----num" << endl;
+//    }
+  //  *employees_by_id = array_to_return;
+}
+
+
+
+void Market:: inOrderToEmployeesArray(int* employees_array, AVLnode<Company*,int>* root,int* start,int* times_left)
+{
+//    cout << "times left" << *times_left;
+    if (root == nullptr || *times_left == 0) {
+        cout <<"here";
+        return;
+    }
+    if (root->getLeft() != nullptr && *times_left > 0) {
+        inOrderToEmployeesArray(employees_array,root->getLeft(),start,times_left);
+    }
+    if (*times_left ==0)
+    {
+        return;
+    }
+//        cout << root->getKey1() << ", " << endl;
+//        cout << "start is : " << *start << endl;
+    cout << "here1 " << endl;
+    root -> getData() ->getHighestEarner(&employees_array[*(start)]);
+    cout << "here2 " << endl;
+    cout << *employees_array << endl;
+    (*start)++;
+    (*times_left)--;
+    cout << *times_left;
+    if (*times_left ==0)
+    {
+        return;
+    }
+    if (root->getRight() != nullptr && *times_left > 0) {
+        inOrderToEmployeesArray(employees_array, root->getRight(),start,times_left);
+    }
+}
+
+int Market ::getNumOfCompaniesWithEmp() const {
+    return num_of_company_with_employees;
+}
+
+int Market ::getNumOfEmployees() const {
+    return num_of_employees;
+}
 //

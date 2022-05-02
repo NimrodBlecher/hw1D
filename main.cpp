@@ -103,15 +103,22 @@ int main() {
     cout<<endl<<endl<<endl<<endl;
     print2D(highTech.getEmployeesTreeBySalary());
 
+
+    cout<<endl << "companies with employees tree is: " <<endl;
+
+    print2D(highTech.getCompaniesTreeWithEmployees());
+
     int** test;
     int*  number;
-    highTech.getAllEmployeesBySalary(-9,test,number);
-    while(test != nullptr)
+    //highTech.getAllEmployeesBySalary(-9,test,number);
+    cout << "num of cmp with emp : " << highTech.getNumOfCompaniesWithEmp() << endl;
+    cout << "num of emp : " << highTech.getNumOfEmployees() << endl;
+    highTech.getHighestEarnerInEachCompany(2,test);
+    cout<< "finished" <<endl;
+    for ( int i= 0; i <2 ; i++)
     {
-        cout<<**test << "<-----num" << endl;
-        test++;
+        cout<<*test[i] << "<-----num" << endl;
     }
-    cout<<*number << "<-----num" << endl;
 
 
     highTech.removeEmployee(11);

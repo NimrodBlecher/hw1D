@@ -57,7 +57,7 @@ void Company ::  getHighestEarner(int* earner_id ) const {
     {
         throw CompanyHasNoEmployees();
     }
-    *earner_id = highest_earner_id;
+    (*(earner_id)) = this -> highest_earner_id;
 }
 
 void  Company :: removeEmployee(int remove_id,int salary){

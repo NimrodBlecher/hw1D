@@ -4,15 +4,13 @@
 CMakeFiles/hw1.dir/Comapny.cpp.o: ../AVLnode.h
 CMakeFiles/hw1.dir/Comapny.cpp.o: ../Comapny.cpp
 CMakeFiles/hw1.dir/Comapny.cpp.o: ../Company.h
-CMakeFiles/hw1.dir/Comapny.cpp.o: ../Worker.h
+CMakeFiles/hw1.dir/Comapny.cpp.o: ../Employee.h
 CMakeFiles/hw1.dir/Comapny.cpp.o: ../exceptions.h
 CMakeFiles/hw1.dir/Comapny.cpp.o: ../helpers.h
 
 CMakeFiles/hw1.dir/Employee.cpp.o: ../AVLnode.h
-CMakeFiles/hw1.dir/Employee.cpp.o: ../Company.h
 CMakeFiles/hw1.dir/Employee.cpp.o: ../Employee.cpp
 CMakeFiles/hw1.dir/Employee.cpp.o: ../Employee.h
-CMakeFiles/hw1.dir/Employee.cpp.o: ../Worker.h
 CMakeFiles/hw1.dir/Employee.cpp.o: ../exceptions.h
 CMakeFiles/hw1.dir/Employee.cpp.o: ../helpers.h
 
@@ -21,15 +19,8 @@ CMakeFiles/hw1.dir/Market.cpp.o: ../Company.h
 CMakeFiles/hw1.dir/Market.cpp.o: ../Employee.h
 CMakeFiles/hw1.dir/Market.cpp.o: ../Market.cpp
 CMakeFiles/hw1.dir/Market.cpp.o: ../Market.h
-CMakeFiles/hw1.dir/Market.cpp.o: ../Worker.h
 CMakeFiles/hw1.dir/Market.cpp.o: ../exceptions.h
 CMakeFiles/hw1.dir/Market.cpp.o: ../helpers.h
-
-CMakeFiles/hw1.dir/Worker.cpp.o: ../AVLnode.h
-CMakeFiles/hw1.dir/Worker.cpp.o: ../Worker.cpp
-CMakeFiles/hw1.dir/Worker.cpp.o: ../Worker.h
-CMakeFiles/hw1.dir/Worker.cpp.o: ../exceptions.h
-CMakeFiles/hw1.dir/Worker.cpp.o: ../helpers.h
 
 CMakeFiles/hw1.dir/helpers.cpp.o: ../helpers.cpp
 CMakeFiles/hw1.dir/helpers.cpp.o: ../helpers.h
@@ -38,7 +29,6 @@ CMakeFiles/hw1.dir/main.cpp.o: ../AVLnode.h
 CMakeFiles/hw1.dir/main.cpp.o: ../Company.h
 CMakeFiles/hw1.dir/main.cpp.o: ../Employee.h
 CMakeFiles/hw1.dir/main.cpp.o: ../Market.h
-CMakeFiles/hw1.dir/main.cpp.o: ../Worker.h
 CMakeFiles/hw1.dir/main.cpp.o: ../exceptions.h
 CMakeFiles/hw1.dir/main.cpp.o: ../helpers.h
 CMakeFiles/hw1.dir/main.cpp.o: ../main.cpp

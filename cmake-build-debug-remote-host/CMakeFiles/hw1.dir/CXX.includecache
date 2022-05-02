@@ -16,21 +16,37 @@ exceptions.h
 helpers.h
 /home/yuvalrosman/dast_new/helpers.h
 
-/home/yuvalrosman/dast_new/Comapny.cpp
-Company.h
 /home/yuvalrosman/dast_new/Company.h
-
-/home/yuvalrosman/dast_new/Company.h
-Worker.h
-/home/yuvalrosman/dast_new/Worker.h
+Employee.h
+/home/yuvalrosman/dast_new/Employee.h
 AVLnode.h
 /home/yuvalrosman/dast_new/AVLnode.h
 
-/home/yuvalrosman/dast_new/Worker.h
+/home/yuvalrosman/dast_new/Employee.h
+AVLnode.h
+/home/yuvalrosman/dast_new/AVLnode.h
+
+/home/yuvalrosman/dast_new/Market.h
+Employee.h
+/home/yuvalrosman/dast_new/Employee.h
+Company.h
+/home/yuvalrosman/dast_new/Company.h
 AVLnode.h
 /home/yuvalrosman/dast_new/AVLnode.h
 
 /home/yuvalrosman/dast_new/exceptions.h
 
 /home/yuvalrosman/dast_new/helpers.h
+
+/home/yuvalrosman/dast_new/main.cpp
+iostream
+-
+AVLnode.h
+/home/yuvalrosman/dast_new/AVLnode.h
+Employee.h
+/home/yuvalrosman/dast_new/Employee.h
+Company.h
+/home/yuvalrosman/dast_new/Company.h
+Market.h
+/home/yuvalrosman/dast_new/Market.h
 
