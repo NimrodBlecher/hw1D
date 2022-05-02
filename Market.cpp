@@ -222,6 +222,38 @@ void Market:: increaseCompanyValue(int company_id, int value_to_increase)
     }
     int current_value = company_info -> getData();
     company_info->setData(value_to_increase+current_value);
-    Company* company = companies_with_employees_tree ->findKey1(company_id) -> getData();
-    company ->setValue(value_to_increase);
+    AVLnode<Company*,int>* company_node = companies_with_employees_tree ->findKey1(company_id);
+    if(num_of_company_with_employees != 0 && company_node != nullptr)
+    {
+
+        company_node->getData()->setValue(value_to_increase);
+    }
+
 }
+
+
+void Market:: hireEmployee(int employee_id, int new_company_id)
+{
+    if(employee_id<=0 || new_company_id <=0)
+    {
+        throw BadInput();
+    }
+    Employee* employee = market_employee_id_tree->findKey1(employee_id) ->getData();
+    int new_employee_id = employee->getId();
+    int new_employee_grade = employee->getGrade();
+    int new_employee_salary = employee->getSalary();
+    if(num_of_employees ==0 || employee == nullptr)
+    {
+        throw EmployeeDoesNotExist();
+    }
+    removeEmployee(employee_id);
+    try
+    {
+        addEmployee(new_company_id,new_employee_id,new_employee_grade,new_employee_salary);
+    }
+    catch(CompanyDoesntExist&)
+    {
+        throw CompanyDoesntExist();
+    };
+}
+//

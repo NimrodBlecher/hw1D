@@ -31,7 +31,8 @@ public:
     void getCompanyInfo(int company_id, int* value, int* number_of_employees); // made by yuval
     void  getEmployeeInfo(int employee_id, int* company_id, int* salary,int* grade);
     void increaseCompanyValue(int company_id, int value_to_increase);
-   //void promoteEmployee(int employee_id, int salary_increase, int bump_grade);
+    void hireEmployee(int employee_id, int new_company_id);
+    void promoteEmployee(int employee_id, int salary_increase, int bump_grade);
 
 
 

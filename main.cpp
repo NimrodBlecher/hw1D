@@ -13,8 +13,8 @@ int main() {
 
     highTech.addCompany(20,200000);
     highTech.addCompany(10,33333);
-    highTech.addCompany(40,4646546);
-    highTech.addCompany(30,999999);
+    highTech.addCompany(40,25000);
+    highTech.addCompany(30,9000);
 
     highTech.addEmployee(10,11,5,600);
     highTech.addEmployee(20,21,13,600);
@@ -54,6 +54,7 @@ int main() {
     highTech.getEmployeeInfo(27,&company_id,&salary,&grade);
     cout << " employee 27 info :" << company_id << " " << salary << " " << grade << endl;
     int num_of_employees,value;
+    highTech.increaseCompanyValue(40,1000);
     highTech.getCompanyInfo(40,&value,&num_of_employees);
     cout << " Company 40 info :" << company_id << " " << value << " " << num_of_employees << endl;
     cout << "after renew company 20 :  ";
@@ -65,8 +66,19 @@ int main() {
     highTech.removeEmployee(41);
     highTech.removeEmployee(42);
     highTech.removeEmployee(32);
+    highTech.increaseCompanyValue(30,666);
+    cout<<"------------------------"<<endl<<endl<<endl;
+    print2D(highTech.getEmployeesTreeById());
+    highTech.hireEmployee(29,30);
     highTech.getCompanyInfo(30,&value,&num_of_employees);
     cout << " Company 30 info :" << company_id << " " << value << " " << num_of_employees << endl;
+    cout<<"------------------------"<<endl<<endl<<endl;
+    cout<< "company 20 tree:" << endl;
+    print2D(highTech.getCompany(20)->getEmployeesTreeById());
+    cout<<"------------------------"<<endl<<endl<<endl;
+    cout<< "company 30 tree:" << endl;
+    print2D(highTech.getCompany(30)->getEmployeesTreeById());
+    highTech.removeEmployee(29);
     highTech.removeCompany(30);
     highTech.removeCompany(40);
     highTech.removeEmployee(21);
@@ -77,13 +89,12 @@ int main() {
     highTech.removeEmployee(26);
     highTech.removeEmployee(27);
     highTech.removeEmployee(28);
-    highTech.removeEmployee(29);
     highTech.removeCompany(20);
     print2D(highTech.getCompaniesTreeWithEmployees());
     print2D(highTech.getCompaniesTree());
     print2D(highTech.getEmployeesTreeById());
     print2D(highTech.getEmployeesTreeBySalary());
-
+//
 //    Company* company_20 = highTech.getCompany(20);
 ////    print2D(company_20->getEmployeesTreeById());
 //   Company* company_10 = highTech.getCompany(10);
