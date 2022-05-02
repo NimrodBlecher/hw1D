@@ -47,5 +47,8 @@ namespace hw1 {
      class InvalidInput : public  Exception{
 };
 
+     class NoEmployeesInMarket : public Exception{
+     };
+
 #endif //EMPLOYEE_H_EXCEPTIONS_H
 }

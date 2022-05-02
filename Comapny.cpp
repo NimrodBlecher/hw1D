@@ -64,7 +64,6 @@ void  Company :: removeEmployee(int remove_id,int salary){
     AVLnode<Employee*,int>* employee_by_id = employees_tree_by_id -> find(remove_id,salary);
     if (num_of_employees != 0 && employee_by_id != nullptr)
     {
-
         setNewEmployeesTreeById(deleteNode(remove_id,salary,employees_tree_by_id));
         setNewEmployeesTreeBySalary(deleteNode(salary,remove_id,employees_tree_by_salary));
         setNumOfEmployees(-1);
@@ -113,16 +112,20 @@ void Company ::buyCompany(Company* company_to_buy, double factor)
     {
         throw CompanyValueNotSufficient();
     }
+    int new_company_id = this->getId();
+    AVLnode<Employee*,int>* company_to_buy_employee_tree =  company_to_buy->getEmployeesTreeById();
+    inOrderChangingCompanyId(company_to_buy_employee_tree,new_company_id);
     this->setNewEmployeesTreeById(mergeTrees(this->employees_tree_by_id, company_to_buy->getEmployeesTreeById()));
     this->setNewEmployeesTreeBySalary(mergeTrees(this->employees_tree_by_salary,
                                          company_to_buy->getEmployeesTreeBySalary()));
     this -> value = floor((this->value + company_to_buy->getValue())*factor);
     setNumOfEmployees(company_to_buy->num_of_employees);
     company_to_buy -> setNumOfEmployees(-(company_to_buy-> num_of_employees));
+    this -> setHighestEarner();
 }
 
 
-void Company ::promoteEmployee(int employee_id,int salary_addition,bool upgrade) {
+void Company ::promoteEmployeeInCompany(int employee_id, int salary_addition, bool upgrade) {
     AVLnode<Employee*,int>* employee_node_by_id = employees_tree_by_id ->findKey1(employee_id);
     Employee* employee = employee_node_by_id -> getData();
     if (upgrade == UPGRADE)
@@ -145,4 +148,19 @@ void Company ::promoteEmployee(int employee_id,int salary_addition,bool upgrade)
         employees_tree_by_salary = employees_tree_by_salary ->insertNew(employee,new_salary,employee_id);
     }
 
+}
+
+
+void Company::inOrderChangingCompanyId(AVLnode<Employee *, int> *root, int new_company_id) {
+    if (root == nullptr) {
+        return;
+    }
+    if (root->getLeft() != nullptr) {
+        inOrderChangingCompanyId(root->getLeft(),new_company_id);
+
+    }
+    root->getData()->setCompanyId(new_company_id);
+    if (root->getRight() != nullptr) {
+        inOrderChangingCompanyId(root->getRight(),new_company_id);
+    }
 }

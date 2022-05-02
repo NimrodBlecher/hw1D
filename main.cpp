@@ -11,106 +11,127 @@ int main() {
 
     Market highTech;
 
-    highTech.addCompany(20,200000);
-    highTech.addCompany(10,33333);
-    highTech.addCompany(40,25000);
-    highTech.addCompany(30,9000);
+    highTech.addCompany(1,100);
+    highTech.addCompany(2,10);
+    highTech.addCompany(3,1);
+    highTech.addCompany(4,400000000);
+    highTech.addCompany(5,20000);
+    highTech.addCompany(6,10);
 
-    highTech.addEmployee(10,11,5,600);
-    highTech.addEmployee(20,21,13,600);
-    highTech.addEmployee(10,12,5,600);
-    highTech.addEmployee(20,22,13,600);
-    highTech.addEmployee(30,31,5,600);
-    highTech.addEmployee(40,41,13,600);
-    highTech.addEmployee(40,42,5,600);
-    highTech.addEmployee(30,32,13,600);
+    highTech.addEmployee(1,11,1,100);
+    highTech.addEmployee(1,12,1,100);
+    highTech.addEmployee(1,13,1,100);
+    highTech.addEmployee(2,21,2,200);
+    highTech.addEmployee(2,22,2,200);
+    highTech.addEmployee(2,23,2,200);
+    highTech.addEmployee(3,32,3,300);
+    highTech.addEmployee(3,31,3,300);
+    highTech.addEmployee(3,30,3,300);
+
+    highTech.promoteEmployee(31,5000,1);
+    highTech.acquireCompany(5,6,10);
+    cout<<endl << "company tree is: " <<endl;
+    print2D(highTech.getCompaniesTree());
+    cout<<endl << "companies with employees tree is: " <<endl;
+    print2D(highTech.getCompaniesTreeWithEmployees());
+    cout<<endl << " employees tree is: " <<endl;
+    print2D(highTech.getEmployeesTreeById());
+    cout<<endl << " employees tree in 1  is: " <<endl;
+    print2D((highTech.getCompany(1))->getEmployeesTreeById());
+    cout<<endl << " employees tree in 2  is: " <<endl;
+    print2D((highTech.getCompany(2))->getEmployeesTreeById());
+
+    int num_of_employees,value;
+
+    //highTech.acquireCompany(1,2,6);
+    cout << "company 1 info is :" << endl;
+    highTech.getCompanyInfo(1,&value,&num_of_employees);
+    cout << value << " " << num_of_employees << endl;
+    cout << "company 5 info is :" << endl;
+    highTech.getCompanyInfo(5,&value,&num_of_employees);
+    cout << value << " " << num_of_employees << endl;
 
 
-//    AVLnode<int,int>* companies = highTech.getCompaniesTree();
-//    cout << "Companies By Id is : " << endl;
-//    cout << endl << endl << endl << endl;
-//    print2D(companies);
-//    cout << "Employees By Id is : " << endl;
-//    cout << endl << endl << endl << endl;
-//    print2D(highTech.getEmployeesTreeById());
+    cout<<endl << "company tree is: " <<endl;
+    print2D(highTech.getCompaniesTree());
+    cout<<endl << "companies with employees tree is: " <<endl;
 
+    print2D(highTech.getCompaniesTreeWithEmployees());
+    cout<<endl << " employees tree is: " <<endl;
+    print2D(highTech.getEmployeesTreeById());
+    cout<<endl << " employees tree in 1  is: " <<endl;
+    print2D((highTech.getCompany(1))->getEmployeesTreeById());
+    cout<<endl << " employees tree in 1 by salary is: " <<endl;
+    print2D((highTech.getCompany(1))->getEmployeesTreeBySalary());
+//    cout<<endl << " employees tree in 2  is: " <<endl;
+//    print2D((highTech.getCompany(2))->getEmployeesTreeById());
+    highTech.getCompanyInfo(1,&value,&num_of_employees);
+
+    int highest_earner;
+    highTech.getHighestEarner(1,&highest_earner);
+    cout << "highest earner in company 1 is  " << highest_earner << endl;
+
+    highTech.getHighestEarner(-3,&highest_earner);
+    cout << "highest earner in the market is  " << highest_earner << endl;
+
+    highTech.promoteEmployee(13,500000,1);
+
+    highTech.getHighestEarner(1,&highest_earner);
+    cout << "highest earner in company 1 is  " << highest_earner << endl;
+
+    highTech.getHighestEarner(-3,&highest_earner);
+    cout << "highest earner in the market is  " << highest_earner << endl;
+
+   highTech.acquireCompany(1,3,6);
+
+    highTech.promoteEmployee(22,6000000,1);
+
+    highTech.getHighestEarner(1,&highest_earner);
+    cout << "highest earner in company 1 is  " << highest_earner << endl;
+
+    highTech.getHighestEarner(-9,&highest_earner);
+    cout << "highest earner in the market is  " << highest_earner << endl;
+
+    highTech.removeEmployee(22);
+
+    highTech.getHighestEarner(1,&highest_earner);
+    cout << "highest earner in company 1 is  " << highest_earner << endl;
+
+    highTech.getHighestEarner(-9,&highest_earner);
+    cout << "highest earner in the market is  " << highest_earner << endl;
 
     highTech.removeEmployee(11);
-    highTech.removeEmployee(21);
-    highTech.removeEmployee(22);
-    cout << "after removing employee 21,22 , and Company 20 along :  ";
-    print2D(highTech.getCompaniesTreeWithEmployees());
-    cout << endl << endl << endl;
-    highTech.addEmployee(20,21,10,66);
-    highTech.addEmployee(20,22,10,66);
-    highTech.addEmployee(20,23,10,33);
-    highTech.addEmployee(20,24,10,33);
-    highTech.addEmployee(20,25,10,55);
-    highTech.addEmployee(20,26,10,55);
-    highTech.addEmployee(20,27,10,77);
-    highTech.addEmployee(20,28,10,77);
-    highTech.addEmployee(20,29,10,77);
-    int salary,grade,company_id;
-    highTech.getEmployeeInfo(27,&company_id,&salary,&grade);
-    cout << " employee 27 info :" << company_id << " " << salary << " " << grade << endl;
-    int num_of_employees,value;
-    highTech.increaseCompanyValue(40,1000);
-    highTech.getCompanyInfo(40,&value,&num_of_employees);
-    cout << " Company 40 info :" << company_id << " " << value << " " << num_of_employees << endl;
-    cout << "after renew company 20 :  ";
-    print2D(highTech.getCompaniesTreeWithEmployees());
-    print2D(highTech.getCompany(20)-> getEmployeesTreeById());
-    highTech.removeEmployee(31);
     highTech.removeEmployee(12);
-    highTech.removeCompany(10);
-    highTech.removeEmployee(41);
-    highTech.removeEmployee(42);
-    highTech.removeEmployee(32);
-    highTech.increaseCompanyValue(30,666);
-    cout<<"------------------------"<<endl<<endl<<endl;
-    print2D(highTech.getEmployeesTreeById());
-    highTech.hireEmployee(29,30);
-    highTech.getCompanyInfo(30,&value,&num_of_employees);
-    cout << " Company 30 info :" << company_id << " " << value << " " << num_of_employees << endl;
-    cout<<"------------------------"<<endl<<endl<<endl;
-    cout<< "company 20 tree:" << endl;
-    print2D(highTech.getCompany(20)->getEmployeesTreeById());
-    cout<<"------------------------"<<endl<<endl<<endl;
-    cout<< "company 30 tree:" << endl;
-    print2D(highTech.getCompany(30)->getEmployeesTreeById());
-    highTech.removeEmployee(29);
-    highTech.removeCompany(30);
-    highTech.removeCompany(40);
+    highTech.removeEmployee(13);
     highTech.removeEmployee(21);
-    highTech.removeEmployee(22);
     highTech.removeEmployee(23);
-    highTech.removeEmployee(24);
-    highTech.removeEmployee(25);
-    highTech.removeEmployee(26);
-    highTech.removeEmployee(27);
-    highTech.removeEmployee(28);
-    highTech.removeCompany(20);
-    print2D(highTech.getCompaniesTreeWithEmployees());
-    print2D(highTech.getCompaniesTree());
-    print2D(highTech.getEmployeesTreeById());
-    print2D(highTech.getEmployeesTreeBySalary());
-//
-//    Company* company_20 = highTech.getCompany(20);
-////    print2D(company_20->getEmployeesTreeById());
-//   Company* company_10 = highTech.getCompany(10);
-////    print2D(company_10->getEmployeesTreeById());
-//
+    highTech.removeEmployee(31);
+    highTech.removeEmployee(32);
+    highTech.removeEmployee(30);
+
+
+    highTech.removeCompany(1);
+    highTech.removeCompany(2);
+    //highTech.removeCompany(3);
+    highTech.removeCompany(4);
+    highTech.removeCompany(5);
+
+    int**
+
+//    cout<<endl << "company tree is: " <<endl;
+//    print2D(highTech.getCompaniesTree());
+//    cout<<endl << "companies with employees tree is: " <<endl;
 //
 //    print2D(highTech.getCompaniesTreeWithEmployees());
-
-
-
-//    print2D(company_20->getEmployeesTreeById());
-//    print2D(company_10->getEmployeesTreeById());
-
-
-
-
+//    cout<<endl << " employees tree is: " <<endl;
+//    print2D(highTech.getEmployeesTreeById());
+//    cout<<endl << " employees tree in 1  is: " <<endl;
+//    print2D((highTech.getCompany(1))->getEmployeesTreeById());
+//    cout<<endl << " employees tree in 1 by salary is: " <<endl;
+//    print2D((highTech.getCompany(1))->getEmployeesTreeBySalary());
+////    cout<<endl << " employees tree in 2  is: " <<endl;
+////    print2D((highTech.getCompany(2))->getEmployeesTreeById());
+//    highTech.getCompanyInfo(1,&value,&num_of_employees);
 
 
 

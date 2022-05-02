@@ -14,7 +14,7 @@ class Market {
     int num_of_employees;
     int num_of_companies;
     int num_of_company_with_employees;
-
+    int highest_earner_id;
 
 public:
     Market();
@@ -23,6 +23,8 @@ public:
     void addEmployee(int company_id, int employee_id,int grade, int salary);
     void removeCompany(int company_id);
     void removeEmployee (int employee_id);
+    void setHighestEarnerId ();
+    int getHighestEarnerId () const;
     AVLnode<Employee*,int>* getEmployeesTreeById();
     AVLnode<Employee*,int>* getEmployeesTreeBySalary();
     AVLnode<int,int>* getCompaniesTree();
@@ -33,6 +35,11 @@ public:
     void increaseCompanyValue(int company_id, int value_to_increase);
     void hireEmployee(int employee_id, int new_company_id);
     void promoteEmployee(int employee_id, int salary_increase, int bump_grade);
+    void acquireCompany(int acquirer_id, int target_id, double factor);
+    void getHighestEarner(int company_id,int* employee_id);
+    void getAllEmployeesBySalary(int company_id, int** employees, int* num_of_employees);
+    void inReverseOrderToSalaryArray(int* employees_by_salary_array[],int* start, AVLnode<Employee*,int>* root  );
+
 
 
 
