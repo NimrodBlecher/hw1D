@@ -215,6 +215,21 @@ namespace hw1 {
     template<class Data, class Key>
     AVLnode<Data, Key> *mergeTrees(AVLnode<Data, Key> *root1, AVLnode<Data, Key> *root2) {
         int start1 = 0, start2 = 0;
+        if(root1 == nullptr || root2 == nullptr)
+        {
+            if(root1 == nullptr && root2 == nullptr)
+            {
+                return nullptr;
+            }
+            else if(root1 == nullptr)
+            {
+                return root2;
+            }
+            else
+            {
+                return root1;
+            }
+        }
         AVLnode<Data, Key> **tree1_array = new AVLnode<Data, Key> *[(int) pow(2, root1->getHeight() + 1)];
         for (int i = 0; i < pow(2, root1->getHeight() + 1); i++) {
             tree1_array[i] = nullptr;
@@ -279,16 +294,16 @@ namespace hw1 {
         delete[] tree1_array;
         delete[] tree2_array;
         delete[] merged_trees_array;
-        cout << "tree 1 is/; "<<endl;
-        print2D(root1);
-        cout << "tree 2 is/; "<<endl;
-        print2D(root2);
+//        cout << "tree 1 is/; "<<endl;
+//        print2D(root1);
+//        cout << "tree 2 is/; "<<endl;
+//        print2D(root2);
         deleteTree(root1);
         deleteTree(root2);
-        cout << "tree 1  AFTER DELETE is/; "<<endl;
-        print2D(root1);
-        cout << "tree 2 AFTERDELETE is/; "<<endl;
-        print2D(root2);
+//        cout << "tree 1  AFTER DELETE is/; "<<endl;
+//       // print2D(root1);
+//        cout << "tree 2 AFTERDELETE is/; "<<endl;
+//        //print2D(root2);
 
         return merged_tree;
     }
@@ -357,7 +372,7 @@ namespace hw1 {
         if (node1.key1 < node2.key1) {
             return true;
         } else if (node1.key1 == node2.key1) {
-            return node1.key2 < node2.key2;
+            return node1.key2 > node2.key2;
         }
         return false;
     }

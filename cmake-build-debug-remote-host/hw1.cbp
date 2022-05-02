@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="hw1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/yuvalrosman/dast_new/cmake-build-debug-remote-host"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/yuvalrosman/dast_new/cmake-build-debug-remote-host"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/yuvalrosman/dast_new/cmake-build-debug-remote-host"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw1">
+				<Option output="/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/hw1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yuvalrosman/dast_new/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 hw1"/>
+					<CompileFile command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw1/fast">
+				<Option output="/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/hw1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yuvalrosman/dast_new/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 hw1/fast"/>
+					<CompileFile command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j32 -f &quot;/home/yuvalrosman/dast_new/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/yuvalrosman/dast_new/AVLnode.h">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="/home/yuvalrosman/dast_new/Comapny.cpp">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="/home/yuvalrosman/dast_new/Company.h">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="/home/yuvalrosman/dast_new/Employee.cpp">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="/home/yuvalrosman/dast_new/Employee.h">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="/home/yuvalrosman/dast_new/Market.cpp">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="/home/yuvalrosman/dast_new/Market.h">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="/home/yuvalrosman/dast_new/exceptions.h">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="/home/yuvalrosman/dast_new/helpers.cpp">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="/home/yuvalrosman/dast_new/helpers.h">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="/home/yuvalrosman/dast_new/main.cpp">
+			<Option target="hw1"/>
+		</Unit>
+		<Unit filename="/home/yuvalrosman/dast_new/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

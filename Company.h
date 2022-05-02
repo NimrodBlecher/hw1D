@@ -25,7 +25,7 @@ public:
     void removeEmployee(int remove_id,int salary);
     int  getValue() const;
     void  setValue(int addition);
-    void promoteEmployee(int employee_id,int salary_addition,bool upgrade);
+    void promoteEmployeeInCompany(int employee_id,int salary_addition,bool upgrade);
     void setHighestEarner();
     void setNumOfEmployees(int addition);
     int getNumOfEmployees() const;
@@ -34,6 +34,7 @@ public:
     AVLnode <Employee*,int>* getEmployeesTreeById();
     AVLnode <Employee*,int>* getEmployeesTreeBySalary();
     void buyCompany(Company* company_to_buy, double factor);
+    void inOrderChangingCompanyId(AVLnode<Employee*, int>* root, int new_company_id);
 };
 
 
