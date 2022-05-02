@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/hw1.dir/CHANGES.cpp.obj"
   "CMakeFiles/hw1.dir/Comapny.cpp.obj"
   "CMakeFiles/hw1.dir/Employee.cpp.obj"
   "CMakeFiles/hw1.dir/Market.cpp.obj"

@@ -1,36 +1,47 @@
 #include "Market.h"
 
-void  Market ::  promoteEmployee(int employee_id, int salary_increase, int bump_grade) {
-    bool upgrade = UPGRADE;
-    if (bump_grade <= 0)
+// ewfwerfwerfwef
+void inOrderToEmployeesArray(int** employees_array,int* start, AVLnode<Company*,int>* root,int* times_left);
+
+void Market ::getHighestEarnerInEachCompany(int number_of_companies_to_find, int **employees_by_id) {
+    if (number_of_companies_to_find == 0 || employees_by_id == nullptr)
     {
-        upgrade = DO_NOT_UPGRADE;
+        throw InvalidInput();
     }
-    AVLnode<Employee*,int>* employee_to_promote_node = market_employee_id_tree ->findKey1(employee_id);
-    if ( num_of_employees == 0 || employee_to_promote_node == nullptr )
+    if (num_of_company_with_employees < number_of_companies_to_find)
     {
-        throw EmployeeDoesNotExist();
+        throw NotEnoughCompaniesWithEmployees();
     }
-    Employee* employee_to_promote  = employee_to_promote_node -> getData();
-    int old_salary = employee_to_promote -> getSalary();
-    int new_salary = old_salary + salary_increase;
-    int company_id = employee_to_promote -> getCompanyId();
-    Company* company_hiring = companies_with_employees_tree ->findKey1(company_id) -> getData();
-    company_hiring -> promoteEmployee(employee_id,salary_increase,upgrade);
-    if (num_of_employees == 1)
-    {
-        AVLnode<Employee*,int>* employee_in_id_node = market_employee_id_tree->findKey1(employee_id);
-        employee_in_id_node ->setKey2(new_salary);
-        AVLnode<Employee*,int>* employee_in_salary_node = market_employees_salary_tree->find(old_salary,employee_id);
-        employee_in_salary_node ->setKey1(new_salary);
+    int** array_to_return = new int*[number_of_companies_to_find];
+    int x = 0 , y = number_of_companies_to_find;
+    AVLnode<Company*,int>* root = companies_with_employees_tree;
+    inOrderToEmployeesArray(array_to_return,&x,root,&y);
+    employees_by_id = array_to_return;
+}
+
+
+
+void inOrderToEmployeesArray(int** employees_array,int* start, AVLnode<Company*,int>* root,int* times_left)
+{
+    if (root == nullptr || *times_left == 0) {
+        return;
     }
-    else
-    {
-        market_employee_id_tree = deleteNode(employee_id,old_salary,market_employee_id_tree);
-        market_employee_id_tree = market_employee_id_tree ->insertNew(employee_to_promote,employee_id,new_salary);
-        market_employees_salary_tree = deleteNode(old_salary,employee_id,market_employees_salary_tree);
-        market_employees_salary_tree = market_employees_salary_tree ->insertNew(employee_to_promote,
-                                                                                new_salary,employee_id);
+    if (root->getLeft() != nullptr && *times_left > 0) {
+        inOrderToEmployeesArray(employees_array,start,root->getLeft(),times_left);
     }
+//        cout << root->getKey1() << ", " << endl;
+//        cout << "start is : " << *start << endl;
+    root -> getData() ->getHighestEarner(employees_array[*start]);
+    (*start)++;
+    (*times_left)--;
+    if (root->getRight() != nullptr && *times_left > 0) {
+        inOrderToEmployeesArray(employees_array, start, root->getRight(),times_left);
+    }
+}
+
+
+
+
+
 
 }

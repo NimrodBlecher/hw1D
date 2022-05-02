@@ -128,6 +128,30 @@ hw1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/build
 .PHONY : hw1/fast
 
+CHANGES.obj: CHANGES.cpp.obj
+.PHONY : CHANGES.obj
+
+# target to build an object file
+CHANGES.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/CHANGES.cpp.obj
+.PHONY : CHANGES.cpp.obj
+
+CHANGES.i: CHANGES.cpp.i
+.PHONY : CHANGES.i
+
+# target to preprocess a source file
+CHANGES.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/CHANGES.cpp.i
+.PHONY : CHANGES.cpp.i
+
+CHANGES.s: CHANGES.cpp.s
+.PHONY : CHANGES.s
+
+# target to generate assembly for a file
+CHANGES.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/CHANGES.cpp.s
+.PHONY : CHANGES.cpp.s
+
 Comapny.obj: Comapny.cpp.obj
 .PHONY : Comapny.obj
 
@@ -257,6 +281,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... hw1
+	@echo ... CHANGES.obj
+	@echo ... CHANGES.i
+	@echo ... CHANGES.s
 	@echo ... Comapny.obj
 	@echo ... Comapny.i
 	@echo ... Comapny.s
