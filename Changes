@@ -25,3 +25,87 @@ void getCompanyInfo(int company_id, int* value, int* num_of_employees); // made 
 
 
     }
+
+
+
+
+
+    // 30.4 22:53
+
+    void Market:: getEmployeeInfo(int employee_id, int* company_id, int* salary,int* grade) //
+    {
+        if(company_id == nullptr || grade == nullptr || salary == nullptr)
+        {
+            throw NullInput();
+        }
+        if(employee_id<=0)
+        {
+            throw EmployeeNegativeId();
+        }
+        AVLnode<AVLnode<Company*,int>*,int>* find_employee = employees_route_to_company->findKey1(employee_id);
+        if(num_of_employees == 0 || find_employee == nullptr )
+        {
+            throw EmployeeDoesNotExist();
+        }
+        *company_id = find_employee->getKey2();
+        AVLnode<Employee*,int>* find_employee_in_general_tree = market_employees_tree_by_id->findKey1(employee_id);
+        *salary = find_employee_in_general_tree->getKey2();
+        *grade = find_employee_in_general_tree->getData()->getGrade();
+
+    }
+
+    void increaseCompanyValue(int company_id, int value_to_increase);
+
+    void Market:: increaseCompanyValue(int company_id, int value_to_increase)
+    {
+        if(company_id<=0)
+        {
+            throw CompanyNegativeId();
+        }
+        if(value_to_increase<=0)
+        {
+            throw NegativeIncreaseValue();
+        }
+        AVLnode<Company*,int>* find_company = companies_tree->findKey1(company_id);
+        if(num_of_companies == 0 || find_company == nullptr )
+        {
+            throw CompanyDoesntExist();
+        }
+        find_company->getData()->setValue(value_to_increase);
+    }
+
+
+    void promoteEmployee(int employee_id, int salary_increase, int bump_grade);
+
+   void Market :: promoteEmployee(int employee_id, int salary_increase, int bump_grade)
+   {
+       if(employee_id<=0)
+       {
+           throw EmployeeNegativeId();
+       }
+       if(salary_increase<=0)
+       {
+           throw NegativeSalaryIncrease();
+       }
+       AVLnode<Employee*,int>* find_employee = market_employees_tree_by_id->findKey1(employee_id);
+       if(num_of_employees == 0 || find_employee == nullptr )
+       {
+           throw EmployeeDoesNotExist();
+       }
+       int old_salary = find_employee->getData()->getSalary();
+       find_employee->getData()->setSalary(salary_increase);
+       int new_salary = find_employee->getData()->getSalary();
+       find_employee->setKey2(new_salary);
+       AVLnode<Employee*,int>* find_employee_by_salary = market_employees_tree_by_salary->find(old_salary,employee_id);
+       find_employee_by_salary->setKey1(new_salary);
+       AVLnode<AVLnode<Company*,int>*,int>* route_to_company = employees_route_to_company->findKey1(employee_id);
+       AVLnode<Company*,int>* employee_company = route_to_company->getData();
+       employee_company->getData()->getEmployeesTreeById()->findKey1(employee_id)->setKey2(new_salary);
+       employee_company->getData()->getEmployeesTreeBySalary()->find(old_salary,employee_id)->setKey1(new_salary);
+       AVLnode<Employee*,int>* find_employee_by_salary_in_company = market_employees_tree_by_salary->findKey1(employee_id);
+
+       if(bump_grade>0)
+       {
+           find_employee->getData()->updateGrade(1);
+       }
+   }

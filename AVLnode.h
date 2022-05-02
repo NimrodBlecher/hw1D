@@ -8,8 +8,6 @@
 #include "exceptions.h"
 #define LEFT 1
 #define RIGHT 2
-#define WITH_DATA true
-#define WITHOUT_DATA false
 #include "helpers.h"
 
 
@@ -30,7 +28,9 @@ namespace hw1 {
     public:
         AVLnode();
 
-        ~AVLnode() = default;
+        ~AVLnode();
+
+        AVLnode(const AVLnode &object);
 
         AVLnode(int key1, int key2);
 
@@ -105,22 +105,23 @@ namespace hw1 {
         template<class A, class B>
         friend bool operator==(const AVLnode<A, B> &node1, const AVLnode<A, B> &node2);
     };
+
+    template <class Data,class Key>
+    AVLnode<Data,Key> :: ~AVLnode<Data, Key>()   {};
+
+
+    template<class Data,class Key>
+    AVLnode<Data,Key> ::AVLnode(const AVLnode<Data, Key> &object) {
+        Data* copied_data = new Data(object.data);
+        data = copied_data;
+        key1 = object.key1;
+        key2 = object.key;
+    }
+
     template<class Data, class Key>
     void free_node(AVLnode<Data,Key>* node);
 
 
-    template<class Data, class Key>
-    void our_delete(AVLnode<Data,Key>* node, bool data)
-    {
-        if(data == WITH_DATA)
-        {
-            if( node -> getData() != nullptr)
-            {
-                delete (node -> getData());
-            }
-        }
-            delete node;
-    }
 
     template<class Data, class Key>
     AVLnode<Data, Key>::AVLnode() : key1(0), key2(0), left(nullptr), right(nullptr), parent(nullptr) {};
@@ -154,26 +155,24 @@ namespace hw1 {
     void deleteTree(AVLnode<Data,Key>* root);
 
     template<class Data, class Key>
-    void deleteTree(AVLnode<Data,Key>* root,bool data) {
+    void deleteTree(AVLnode<Data,Key>* root) {
         if(root == nullptr)
         {
             return;
         }
         if (root->getRight() == nullptr && root->getLeft() == nullptr) {
-            int y = root -> getKey1();
-            cout << "hey" << y;
-            our_delete(root,data);
+            delete root;
             return;
         }
         if (root->getLeft() != nullptr) {
-            deleteTree(root->getLeft(),data);
+            deleteTree(root->getLeft());
             root -> setLeft(nullptr);
         }
         if (root->getRight() != nullptr) {
-            deleteTree(root->getRight(),data);
+            deleteTree(root->getRight());
             root ->setRight(nullptr);
         }
-        deleteTree(root,data);
+        deleteTree(root);
     }
 
     template<class Data, class Key>
@@ -210,11 +209,11 @@ namespace hw1 {
 
 
     template<class Data, class Key>
-    AVLnode<Data, Key> *mergeTrees(AVLnode<Data, Key> *root1, AVLnode<Data, Key> *root2,bool data);
+    AVLnode<Data, Key> *mergeTrees(AVLnode<Data, Key> *root1, AVLnode<Data, Key> *root2);
 
 
     template<class Data, class Key>
-    AVLnode<Data, Key> *mergeTrees(AVLnode<Data, Key> *root1, AVLnode<Data, Key> *root2,bool data) {
+    AVLnode<Data, Key> *mergeTrees(AVLnode<Data, Key> *root1, AVLnode<Data, Key> *root2) {
         int start1 = 0, start2 = 0;
         AVLnode<Data, Key> **tree1_array = new AVLnode<Data, Key> *[(int) pow(2, root1->getHeight() + 1)];
         for (int i = 0; i < pow(2, root1->getHeight() + 1); i++) {
@@ -284,8 +283,8 @@ namespace hw1 {
         print2D(root1);
         cout << "tree 2 is/; "<<endl;
         print2D(root2);
-        deleteTree(root1,data);
-        deleteTree(root2,data);
+        deleteTree(root1);
+        deleteTree(root2);
         cout << "tree 1  AFTER DELETE is/; "<<endl;
         print2D(root1);
         cout << "tree 2 AFTERDELETE is/; "<<endl;
@@ -414,7 +413,7 @@ namespace hw1 {
         // Pass initial space count as 0
         if (root == nullptr)
         {
-            cout <<"null you dumb";
+            cout <<"empty tree" << endl;
             return;
         }
 
@@ -531,9 +530,8 @@ namespace hw1 {
                 insert_node = insert_node->right;
                 continue;
             } else {
-                int y = new_node -> getKey1();
-                cout<<"wtf" << y << endl;
-                our_delete(new_node,WITHOUT_DATA);
+
+                delete new_node;
                 return this;
             }
         }
@@ -688,25 +686,26 @@ namespace hw1 {
     }
 
     template<class Data, class Key>
-    AVLnode<Data,Key>*  deleteNode(Key A, Key B,AVLnode<Data,Key>* root,bool data);
+    AVLnode<Data,Key>*  deleteNode(Key A, Key B,AVLnode<Data,Key>* root);
 
     template<class Data, class Key>
-        AVLnode<Data,Key>*  deleteNode(Key A, Key B ,AVLnode<Data,Key>* root,bool data) {
+        AVLnode<Data,Key>*  deleteNode(Key A, Key B ,AVLnode<Data,Key>* root) {
         AVLnode<Data, Key> *find_node = root->find(A, B);
         if (find_node == nullptr) {
             return root;
         }
         if (find_node == root && (root->getHeight()) == 0)
         {
-            our_delete(root,data);
+            delete root;
             return nullptr;
         }
+        //
         AVLnode<Data, Key> *find_node_dad = find_node->getParent();
         AVLnode<Data, Key> *replace_node = root -> findMax(find_node->getLeft());
         if (replace_node == nullptr) {
             if (find_node->getRight() == nullptr) {
                 if (find_node_dad == nullptr) {
-                    our_delete(find_node,data);
+                    delete find_node;
                    // cout << "deleting root" << "data is : " << find_node->getKey1() << endl;
                     return nullptr;
                 }
@@ -715,17 +714,18 @@ namespace hw1 {
                 } else {
                     find_node_dad->setRight(nullptr);
                 }
-                our_delete(find_node,data);
+                delete find_node;
                 return find_node_dad->fixToRoot();
             } else {
                 if (find_node_dad == nullptr) {
                     find_node->setKey1(find_node->getRight()->getKey1());
                     find_node->setKey2(find_node->getRight()->getKey2());
                     find_node->setData(find_node->getRight()->getData());
-                    our_delete(find_node->getRight(),data);
+                    delete find_node->getRight();
                     find_node->setRight(nullptr);
                     return find_node-> fixToRoot(); ////// ????????????????
                 }
+                //
                 if (*find_node < *find_node_dad) {
                     find_node_dad->setLeft(find_node->getRight());
                     find_node->getRight()->setParent(find_node_dad);
@@ -734,8 +734,8 @@ namespace hw1 {
                     find_node_dad->setRight(find_node->getRight());
                     find_node->getRight()->setParent(find_node_dad);
                 }
-                our_delete(find_node,data);
-                return find_node_dad->getRight()->fixToRoot();
+                delete find_node;
+                return find_node_dad->getLeft()->fixToRoot(); // it was getRight
             }
 
         }
@@ -746,7 +746,7 @@ namespace hw1 {
         if (*(replace_node->getParent()) == *find_node) {
             find_node->setLeft(replace_node->getLeft());
             replace_node -> setParent( find_node);
-            our_delete(replace_node,data);
+            delete replace_node;
             return replace_parent->fixToRoot();
         }
         if (replace_node -> getLeft() != nullptr)
@@ -757,7 +757,7 @@ namespace hw1 {
         {
             replace_parent -> setRight(nullptr);
         }
-        our_delete(replace_node,data);
+        delete replace_node;
         return replace_parent->fixToRoot();
     }
 

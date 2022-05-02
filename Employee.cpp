@@ -20,6 +20,11 @@ void Employee:: setSalary(int addition)
     salary += addition;
 }
 
+int Employee::getGrade() const
+{
+    return grade;
+}
+
 void Employee:: setCompanyId(int company_id)
 {
     my_company_id = company_id;
@@ -31,6 +36,3 @@ void Employee :: updateGrade(int addition)
     grade += addition;
 }
 
-int Employee ::getGrade() const {
-    return grade;
-}
