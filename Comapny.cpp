@@ -20,32 +20,33 @@ int Company ::getNumOfEmployees() const {
 }
 
 
-void Company::hireEmployee (AVLnode<Employee*,int>* employee_by_id, AVLnode<Employee*,int>* employee_by_salary) {
+int Company ::getCompanyId() const {
+    return id;
+}
+
+
+void Company::hireEmployee (Employee* employee) { // MAKE SURE YOU INSERTED THE EMPLOYEE WITH THE RIGHT SALARY,ID,COMPANY_ID,ETC...
     if(num_of_employees == 0)
     {
-        employees_tree_by_id = new AVLnode<AVLnode<Employee*,int>*,int> (employee_by_id,employee_by_id->getData()->getId()
-                                                   ,employee_by_id->getData()->getSalary());
-        employees_tree_by_salary = new AVLnode<AVLnode<Employee*,int>*,int> (employee_by_salary,
-                     employee_by_salary->getData()->getSalary(),employee_by_salary->getData()->getId());
+        employees_tree_by_id = new AVLnode<Employee*,int> (employee,employee->getId(),employee->getSalary());
+        employees_tree_by_salary = new AVLnode<Employee*,int> (employee,employee->getSalary(),employee->getId());
     }
     else
     {
-        employees_tree_by_id = employees_tree_by_id ->insertNew(employee_by_id,employee_by_id->getData()->getId()
-                ,employee_by_id -> getData()->getSalary());
-        employees_tree_by_salary = employees_tree_by_salary ->insertNew(employee_by_salary,
-                   employee_by_salary->getData()->getSalary(),employee_by_salary->getData()->getId());
+        employees_tree_by_id = employees_tree_by_id ->insertNew(employee,employee->getId(),employee -> getSalary());
+        employees_tree_by_salary = employees_tree_by_salary ->insertNew(employee,employee->getSalary(),employee->getId());
    }
     this -> setNumOfEmployees(1);
     this -> setHighestEarner();
 }
 
 
-AVLnode <AVLnode<Employee*,int>*,int>* Company ::getEmployeesTreeById() {
+AVLnode <Employee*,int>* Company ::getEmployeesTreeById() {
     return employees_tree_by_id;
 }
 
 
-AVLnode <AVLnode<Employee*,int>*,int>* Company ::getEmployeesTreeBySalary()  {
+AVLnode <Employee*,int>* Company ::getEmployeesTreeBySalary()  {
     return employees_tree_by_salary;
 }
 
@@ -60,11 +61,12 @@ void Company ::  getHighestEarner(int* earner_id ) const {
 }
 
 void  Company :: removeEmployee(int remove_id,int salary){
-    AVLnode<AVLnode<Employee*,int>*,int>* employee_by_id = employees_tree_by_id -> find(remove_id,salary);
+    AVLnode<Employee*,int>* employee_by_id = employees_tree_by_id -> find(remove_id,salary);
     if (num_of_employees != 0 && employee_by_id != nullptr)
     {
-        setNewEmployeesTreeById(deleteNode(remove_id,salary,employees_tree_by_id,WITHOUT_DATA));
-        setNewEmployeesTreeBySalary(deleteNode(salary,remove_id,employees_tree_by_salary,WITHOUT_DATA));
+
+        setNewEmployeesTreeById(deleteNode(remove_id,salary,employees_tree_by_id));
+        setNewEmployeesTreeBySalary(deleteNode(salary,remove_id,employees_tree_by_salary));
         setNumOfEmployees(-1);
         setHighestEarner();
         if (num_of_employees == 0)
@@ -87,9 +89,9 @@ void Company ::setHighestEarner() {
         highest_earner_id =0;
         return;
     }
-    AVLnode<AVLnode<Employee*,int>*,int>* employee  = this -> getEmployeesTreeBySalary() ->
+    AVLnode<Employee*,int>* employee  = this -> getEmployeesTreeBySalary() ->
             findMax(this-> getEmployeesTreeBySalary());
-    highest_earner_id = employee -> getData() -> getData() -> getSalary();
+    highest_earner_id = employee -> getData()-> getId();
 }
 
 
@@ -97,11 +99,11 @@ void Company ::setNumOfEmployees(int addition) {
     num_of_employees += addition;
 }
 
-void Company ::setNewEmployeesTreeById(AVLnode<AVLnode<Employee*, int>*, int> *new_employees_tree_by_id)
+void Company ::setNewEmployeesTreeById(AVLnode<Employee*, int> *new_employees_tree_by_id)
 {
     employees_tree_by_id = new_employees_tree_by_id;
 }
-void Company ::setNewEmployeesTreeBySalary(AVLnode<AVLnode<Employee*, int>*, int> *new_employees_tree_by_salary) {
+void Company ::setNewEmployeesTreeBySalary(AVLnode<Employee*, int> *new_employees_tree_by_salary) {
     employees_tree_by_salary = new_employees_tree_by_salary;
 }
 
@@ -111,19 +113,12 @@ void Company ::buyCompany(Company* company_to_buy, double factor)
     {
         throw CompanyValueNotSufficient();
     }
-    this->setNewEmployeesTreeById(mergeTrees(this->employees_tree_by_id, company_to_buy->getEmployeesTreeById(),WITHOUT_DATA));
+    this->setNewEmployeesTreeById(mergeTrees(this->employees_tree_by_id, company_to_buy->getEmployeesTreeById()));
     this->setNewEmployeesTreeBySalary(mergeTrees(this->employees_tree_by_salary,
-                                         company_to_buy->getEmployeesTreeBySalary(),WITHOUT_DATA));
+                                         company_to_buy->getEmployeesTreeBySalary()));
     this -> value = floor((this->value + company_to_buy->getValue())*factor);
     setNumOfEmployees(company_to_buy->num_of_employees);
     company_to_buy -> setNumOfEmployees(-(company_to_buy-> num_of_employees));
 }
 
-
-//void Company ::destroyCompany()
-//{
-//    employees_tree_by_salary->deleteTree();
-//    employees_tree_by_id->deleteTree();
-//    delete this;
-//}
 

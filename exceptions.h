@@ -11,6 +11,8 @@ namespace hw1 {
 
     class EmployeeAlreadyExist : public Exception {
     };
+    class BadInput : public Exception {
+    };
 
     class CompanyHasNoEmployees : public Exception {
     };
@@ -41,6 +43,9 @@ namespace hw1 {
 
     class CompanyHasEmployeesAntCanNotBeDeleted : public Exception{
     };
+
+     class InvalidInput : public  Exception{
+};
 
 #endif //EMPLOYEE_H_EXCEPTIONS_H
 }
