@@ -470,7 +470,7 @@ namespace hw1 {
     int AVLnode<Data, Key>::getHeight() {
         return height;
     }
-
+//nn
     template<class Data, class Key>
     void AVLnode<Data, Key>::updateHeightAfterRotate(AVLnode<Data, Key> *new_root) {
         if (new_root->left != nullptr) {
