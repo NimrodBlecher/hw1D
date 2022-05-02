@@ -1,6 +1,6 @@
 #include "Market.h"
 
-
+// ewfwerfwerfwef
 void inOrderToEmployeesArray(int** employees_array,int* start, AVLnode<Company*,int>* root,int* times_left);
 
 void Market ::getHighestEarnerInEachCompany(int number_of_companies_to_find, int **employees_by_id) {
