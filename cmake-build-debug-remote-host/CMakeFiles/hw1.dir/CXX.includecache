@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yuvalrosman/dast_new/AVLnode.h
+iostream
+-
+math.h
+/home/yuvalrosman/dast_new/math.h
+exceptions.h
+/home/yuvalrosman/dast_new/exceptions.h
+helpers.h
+/home/yuvalrosman/dast_new/helpers.h
+
+/home/yuvalrosman/dast_new/Comapny.cpp
+Company.h
+/home/yuvalrosman/dast_new/Company.h
+
+/home/yuvalrosman/dast_new/Company.h
+Worker.h
+/home/yuvalrosman/dast_new/Worker.h
+AVLnode.h
+/home/yuvalrosman/dast_new/AVLnode.h
+
+/home/yuvalrosman/dast_new/Worker.h
+AVLnode.h
+/home/yuvalrosman/dast_new/AVLnode.h
+
+/home/yuvalrosman/dast_new/exceptions.h
+
+/home/yuvalrosman/dast_new/helpers.h
+

@@ -1,0 +1,4 @@
+/home/mtm/cmake-3.17.0-Linux-x86_64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/yuvalrosman/dast_new
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/yuvalrosman/dast_new/cmake-build-debug-remote-host
