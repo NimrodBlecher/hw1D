@@ -100,6 +100,10 @@ int main() {
     highTech.getHighestEarner(-9,&highest_earner);
     cout << "highest earner in the market is  " << highest_earner << endl;
 
+    int** test;
+    int* number
+    highTech.getAllEmployeesBySalary(-9,&test,&number);
+
     highTech.removeEmployee(11);
     highTech.removeEmployee(12);
     highTech.removeEmployee(13);
@@ -116,7 +120,7 @@ int main() {
     highTech.removeCompany(4);
     highTech.removeCompany(5);
 
-    int**
+
 
 //    cout<<endl << "company tree is: " <<endl;
 //    print2D(highTech.getCompaniesTree());
