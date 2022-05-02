@@ -517,7 +517,7 @@ void Market:: inOrderToEmployeesArray(int* employees_array, AVLnode<Company*,int
         inOrderToEmployeesArray(employees_array, root->getRight(),start,times_left);
     }
 }
-
+//
 int Market ::getNumOfCompaniesWithEmp() const {
     return num_of_company_with_employees;
 }

@@ -43,7 +43,7 @@ public:
     void inReverseOrderToSalaryArray(int* employees_by_salary_array,int* start, AVLnode<Employee*,int>* root  );
     void getHighestEarnerInEachCompany(int number_of_companies_to_find, int* employees_by_id[]);
     void inOrderToEmployeesArray(int* employees_array, AVLnode<Company*,int>* root,int* start,int* times_left);
-
+//
 
 
 

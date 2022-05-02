@@ -59,7 +59,7 @@ void Company ::  getHighestEarner(int* earner_id ) const {
     }
     (*(earner_id)) = this -> highest_earner_id;
 }
-
+//
 void  Company :: removeEmployee(int remove_id,int salary){
     AVLnode<Employee*,int>* employee_by_id = employees_tree_by_id -> find(remove_id,salary);
     if (num_of_employees != 0 && employee_by_id != nullptr)
