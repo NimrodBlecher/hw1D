@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\yuval\Desktop\Technion\SemesterD\DaSt-234218\HWs\HW1_git\hw1D
+CMAKE_SOURCE_DIR = "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\yuval\Desktop\Technion\SemesterD\DaSt-234218\HWs\HW1_git\hw1D\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\yuval\Desktop\Technion\SemesterD\DaSt-234218\HWs\HW1_git\hw1D\cmake-build-debug\CMakeFiles C:\Users\yuval\Desktop\Technion\SemesterD\DaSt-234218\HWs\HW1_git\hw1D\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\cmake-build-debug\CMakeFiles" "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\cmake-build-debug\\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\yuval\Desktop\Technion\SemesterD\DaSt-234218\HWs\HW1_git\hw1D\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -200,30 +200,6 @@ Market.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Market.cpp.s
 .PHONY : Market.cpp.s
 
-Worker.obj: Worker.cpp.obj
-.PHONY : Worker.obj
-
-# target to build an object file
-Worker.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Worker.cpp.obj
-.PHONY : Worker.cpp.obj
-
-Worker.i: Worker.cpp.i
-.PHONY : Worker.i
-
-# target to preprocess a source file
-Worker.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Worker.cpp.i
-.PHONY : Worker.cpp.i
-
-Worker.s: Worker.cpp.s
-.PHONY : Worker.s
-
-# target to generate assembly for a file
-Worker.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1.dir\build.make CMakeFiles/hw1.dir/Worker.cpp.s
-.PHONY : Worker.cpp.s
-
 helpers.obj: helpers.cpp.obj
 .PHONY : helpers.obj
 
@@ -290,9 +266,6 @@ help:
 	@echo ... Market.obj
 	@echo ... Market.i
 	@echo ... Market.s
-	@echo ... Worker.obj
-	@echo ... Worker.i
-	@echo ... Worker.s
 	@echo ... helpers.obj
 	@echo ... helpers.i
 	@echo ... helpers.s

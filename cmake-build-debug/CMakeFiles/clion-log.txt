@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" C:\Users\yuval\Desktop\Technion\SemesterD\DaSt-234218\HWs\HW1_git\hw1D
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" "C:\Users\blech\OneDrive - Technion\Semester D\mivnei\HW\hw1"
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/yuval/Desktop/Technion/SemesterD/DaSt-234218/HWs/HW1_git/hw1D/cmake-build-debug
+-- Build files have been written to: C:/Users/blech/OneDrive - Technion/Semester D/mivnei/HW/hw1/cmake-build-debug
