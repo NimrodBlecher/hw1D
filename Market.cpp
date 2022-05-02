@@ -397,6 +397,7 @@ void Market ::getHighestEarner(int company_id, int *employee_id) {
 }
 void Market:: getAllEmployeesBySalary(int company_id, int** employees, int* num_of_employees)
 {
+
     if(employees == nullptr || num_of_employees == nullptr || company_id == 0)
     {
         throw BadInput();
@@ -434,16 +435,18 @@ void Market:: getAllEmployeesBySalary(int company_id, int** employees, int* num_
     }
 }
 
-void Market:: inReverseOrderToSalaryArray(int* employees_by_salary_array[],int* start, AVLnode<Employee*,int>* root )
+void Market:: inReverseOrderToSalaryArray(int** employees_by_salary_array,int* start, AVLnode<Employee*,int>* root )
 {
+    cout<<"yoyoyo";
     if (root == nullptr) {
         return;
     }
     if (root->getRight() != nullptr) {
         inReverseOrderToSalaryArray(employees_by_salary_array,start,root->getRight());
     }
-    *(employees_by_salary_array[*start]) = root->getData()->getId();
+    *(employees_by_salary_array[*start]) = (root->getData())->getId();
     (*start)++;
+    cout<<"did this";
     if (root->getLeft() != nullptr) {
         inReverseOrderToSalaryArray(employees_by_salary_array,start,root->getLeft());
     }

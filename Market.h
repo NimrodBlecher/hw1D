@@ -38,7 +38,7 @@ public:
     void acquireCompany(int acquirer_id, int target_id, double factor);
     void getHighestEarner(int company_id,int* employee_id);
     void getAllEmployeesBySalary(int company_id, int** employees, int* num_of_employees);
-    void inReverseOrderToSalaryArray(int* employees_by_salary_array[],int* start, AVLnode<Employee*,int>* root  );
+    void inReverseOrderToSalaryArray(int** employees_by_salary_array,int* start, AVLnode<Employee*,int>* root  );
     void getHighestEarnerInEachCompany(int number_of_companies_to_find, int* employees_by_id[]);
 
 
